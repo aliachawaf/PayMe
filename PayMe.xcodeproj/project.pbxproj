@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4131EF1C22478DDD0077CD81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF1B22478DDD0077CD81 /* AppDelegate.swift */; };
+		4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF1D22478DDD0077CD81 /* ViewController.swift */; };
+		4131EF2122478DDD0077CD81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4131EF1F22478DDD0077CD81 /* Main.storyboard */; };
+		4131EF2422478DDD0077CD81 /* PayMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF2222478DDD0077CD81 /* PayMe.xcdatamodeld */; };
+		4131EF2622478DDE0077CD81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4131EF2522478DDE0077CD81 /* Assets.xcassets */; };
+		4131EF2922478DDE0077CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4131EF2722478DDE0077CD81 /* LaunchScreen.storyboard */; };
+		4131EF3422478DDE0077CD81 /* PayMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3322478DDE0077CD81 /* PayMeTests.swift */; };
+		4131EF3F22478DDE0077CD81 /* PayMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4131EF3022478DDE0077CD81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4131EF1022478DDD0077CD81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4131EF1722478DDD0077CD81;
+			remoteInfo = PayMe;
+		};
+		4131EF3B22478DDE0077CD81 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4131EF1022478DDD0077CD81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4131EF1722478DDD0077CD81;
+			remoteInfo = PayMe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4131EF1822478DDD0077CD81 /* PayMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4131EF1B22478DDD0077CD81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4131EF1D22478DDD0077CD81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4131EF2022478DDD0077CD81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4131EF2322478DDD0077CD81 /* PayMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PayMe.xcdatamodel; sourceTree = "<group>"; };
+		4131EF2522478DDE0077CD81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4131EF2822478DDE0077CD81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4131EF2A22478DDE0077CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4131EF2F22478DDE0077CD81 /* PayMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4131EF3322478DDE0077CD81 /* PayMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMeTests.swift; sourceTree = "<group>"; };
+		4131EF3522478DDE0077CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4131EF3A22478DDE0077CD81 /* PayMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMeUITests.swift; sourceTree = "<group>"; };
+		4131EF4022478DDE0077CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4131EF1522478DDD0077CD81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4131EF2C22478DDE0077CD81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4131EF3722478DDE0077CD81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4131EF0F22478DDD0077CD81 = {
+			isa = PBXGroup;
+			children = (
+				4131EF1A22478DDD0077CD81 /* PayMe */,
+				4131EF3222478DDE0077CD81 /* PayMeTests */,
+				4131EF3D22478DDE0077CD81 /* PayMeUITests */,
+				4131EF1922478DDD0077CD81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4131EF1922478DDD0077CD81 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4131EF1822478DDD0077CD81 /* PayMe.app */,
+				4131EF2F22478DDE0077CD81 /* PayMeTests.xctest */,
+				4131EF3A22478DDE0077CD81 /* PayMeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4131EF1A22478DDD0077CD81 /* PayMe */ = {
+			isa = PBXGroup;
+			children = (
+				4131EF1B22478DDD0077CD81 /* AppDelegate.swift */,
+				4131EF1D22478DDD0077CD81 /* ViewController.swift */,
+				4131EF1F22478DDD0077CD81 /* Main.storyboard */,
+				4131EF2522478DDE0077CD81 /* Assets.xcassets */,
+				4131EF2722478DDE0077CD81 /* LaunchScreen.storyboard */,
+				4131EF2A22478DDE0077CD81 /* Info.plist */,
+				4131EF2222478DDD0077CD81 /* PayMe.xcdatamodeld */,
+			);
+			path = PayMe;
+			sourceTree = "<group>";
+		};
+		4131EF3222478DDE0077CD81 /* PayMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				4131EF3322478DDE0077CD81 /* PayMeTests.swift */,
+				4131EF3522478DDE0077CD81 /* Info.plist */,
+			);
+			path = PayMeTests;
+			sourceTree = "<group>";
+		};
+		4131EF3D22478DDE0077CD81 /* PayMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */,
+				4131EF4022478DDE0077CD81 /* Info.plist */,
+			);
+			path = PayMeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4131EF1722478DDD0077CD81 /* PayMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4131EF4322478DDE0077CD81 /* Build configuration list for PBXNativeTarget "PayMe" */;
+			buildPhases = (
+				4131EF1422478DDD0077CD81 /* Sources */,
+				4131EF1522478DDD0077CD81 /* Frameworks */,
+				4131EF1622478DDD0077CD81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PayMe;
+			productName = PayMe;
+			productReference = 4131EF1822478DDD0077CD81 /* PayMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4131EF2E22478DDE0077CD81 /* PayMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4131EF4622478DDE0077CD81 /* Build configuration list for PBXNativeTarget "PayMeTests" */;
+			buildPhases = (
+				4131EF2B22478DDE0077CD81 /* Sources */,
+				4131EF2C22478DDE0077CD81 /* Frameworks */,
+				4131EF2D22478DDE0077CD81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4131EF3122478DDE0077CD81 /* PBXTargetDependency */,
+			);
+			name = PayMeTests;
+			productName = PayMeTests;
+			productReference = 4131EF2F22478DDE0077CD81 /* PayMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4131EF3922478DDE0077CD81 /* PayMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4131EF4922478DDE0077CD81 /* Build configuration list for PBXNativeTarget "PayMeUITests" */;
+			buildPhases = (
+				4131EF3622478DDE0077CD81 /* Sources */,
+				4131EF3722478DDE0077CD81 /* Frameworks */,
+				4131EF3822478DDE0077CD81 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4131EF3C22478DDE0077CD81 /* PBXTargetDependency */,
+			);
+			name = PayMeUITests;
+			productName = PayMeUITests;
+			productReference = 4131EF3A22478DDE0077CD81 /* PayMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4131EF1022478DDD0077CD81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Chawaf Alia & Gestin Rémi";
+				TargetAttributes = {
+					4131EF1722478DDD0077CD81 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4131EF2E22478DDE0077CD81 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4131EF1722478DDD0077CD81;
+					};
+					4131EF3922478DDE0077CD81 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4131EF1722478DDD0077CD81;
+					};
+				};
+			};
+			buildConfigurationList = 4131EF1322478DDD0077CD81 /* Build configuration list for PBXProject "PayMe" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4131EF0F22478DDD0077CD81;
+			productRefGroup = 4131EF1922478DDD0077CD81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4131EF1722478DDD0077CD81 /* PayMe */,
+				4131EF2E22478DDE0077CD81 /* PayMeTests */,
+				4131EF3922478DDE0077CD81 /* PayMeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4131EF1622478DDD0077CD81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4131EF2922478DDE0077CD81 /* LaunchScreen.storyboard in Resources */,
+				4131EF2622478DDE0077CD81 /* Assets.xcassets in Resources */,
+				4131EF2122478DDD0077CD81 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4131EF2D22478DDE0077CD81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4131EF3822478DDE0077CD81 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4131EF1422478DDD0077CD81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4131EF2422478DDD0077CD81 /* PayMe.xcdatamodeld in Sources */,
+				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,
+				4131EF1C22478DDD0077CD81 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4131EF2B22478DDE0077CD81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4131EF3422478DDE0077CD81 /* PayMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4131EF3622478DDE0077CD81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4131EF3F22478DDE0077CD81 /* PayMeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4131EF3122478DDE0077CD81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4131EF1722478DDD0077CD81 /* PayMe */;
+			targetProxy = 4131EF3022478DDE0077CD81 /* PBXContainerItemProxy */;
+		};
+		4131EF3C22478DDE0077CD81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4131EF1722478DDD0077CD81 /* PayMe */;
+			targetProxy = 4131EF3B22478DDE0077CD81 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4131EF1F22478DDD0077CD81 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4131EF2022478DDD0077CD81 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4131EF2722478DDE0077CD81 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4131EF2822478DDE0077CD81 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4131EF4122478DDE0077CD81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4131EF4222478DDE0077CD81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4131EF4422478DDE0077CD81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CG.PayMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4131EF4522478DDE0077CD81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayMe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CG.PayMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4131EF4722478DDE0077CD81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CG.PayMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayMe.app/PayMe";
+			};
+			name = Debug;
+		};
+		4131EF4822478DDE0077CD81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayMeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CG.PayMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayMe.app/PayMe";
+			};
+			name = Release;
+		};
+		4131EF4A22478DDE0077CD81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CG.PayMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PayMe;
+			};
+			name = Debug;
+		};
+		4131EF4B22478DDE0077CD81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PayMeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CG.PayMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PayMe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4131EF1322478DDD0077CD81 /* Build configuration list for PBXProject "PayMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4131EF4122478DDE0077CD81 /* Debug */,
+				4131EF4222478DDE0077CD81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4131EF4322478DDE0077CD81 /* Build configuration list for PBXNativeTarget "PayMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4131EF4422478DDE0077CD81 /* Debug */,
+				4131EF4522478DDE0077CD81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4131EF4622478DDE0077CD81 /* Build configuration list for PBXNativeTarget "PayMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4131EF4722478DDE0077CD81 /* Debug */,
+				4131EF4822478DDE0077CD81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4131EF4922478DDE0077CD81 /* Build configuration list for PBXNativeTarget "PayMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4131EF4A22478DDE0077CD81 /* Debug */,
+				4131EF4B22478DDE0077CD81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4131EF2222478DDD0077CD81 /* PayMe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4131EF2322478DDD0077CD81 /* PayMe.xcdatamodel */,
+			);
+			currentVersion = 4131EF2322478DDD0077CD81 /* PayMe.xcdatamodel */;
+			path = PayMe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4131EF1022478DDD0077CD81 /* Project object */;
+}
