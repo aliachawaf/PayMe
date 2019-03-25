@@ -15,6 +15,7 @@
 		4131EF2922478DDE0077CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4131EF2722478DDE0077CD81 /* LaunchScreen.storyboard */; };
 		4131EF3422478DDE0077CD81 /* PayMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3322478DDE0077CD81 /* PayMeTests.swift */; };
 		4131EF3F22478DDE0077CD81 /* PayMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */; };
+		4195316D22494CF3005CC7AA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195316C22494CF3005CC7AA /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4131EF3A22478DDE0077CD81 /* PayMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMeUITests.swift; sourceTree = "<group>"; };
 		4131EF4022478DDE0077CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4195316C22494CF3005CC7AA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		4131EF1A22478DDD0077CD81 /* PayMe */ = {
 			isa = PBXGroup;
 			children = (
+				4195316B22494CC6005CC7AA /* Controller */,
 				4131EF1B22478DDD0077CD81 /* AppDelegate.swift */,
 				4131EF1D22478DDD0077CD81 /* ViewController.swift */,
 				4131EF1F22478DDD0077CD81 /* Main.storyboard */,
@@ -106,6 +109,7 @@
 				4131EF2722478DDE0077CD81 /* LaunchScreen.storyboard */,
 				4131EF2A22478DDE0077CD81 /* Info.plist */,
 				4131EF2222478DDD0077CD81 /* PayMe.xcdatamodeld */,
+				4195316C22494CF3005CC7AA /* CoreDataManager.swift */,
 			);
 			path = PayMe;
 			sourceTree = "<group>";
@@ -126,6 +130,13 @@
 				4131EF4022478DDE0077CD81 /* Info.plist */,
 			);
 			path = PayMeUITests;
+			sourceTree = "<group>";
+		};
+		4195316B22494CC6005CC7AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			files = (
 				4131EF2422478DDD0077CD81 /* PayMe.xcdatamodeld in Sources */,
 				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,
+				4195316D22494CF3005CC7AA /* CoreDataManager.swift in Sources */,
 				4131EF1C22478DDD0077CD81 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
