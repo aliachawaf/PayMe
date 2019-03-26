@@ -19,21 +19,26 @@ class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     
     let imagePicker = UIImagePickerController()
     
-    @IBAction func loadImage(_ sender: Any) {
-        
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        
-        present(imagePicker, animated: true, completion: nil)
-    }
+    @IBOutlet weak var iconName: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        // Do any additional setup after loading the view.
+        self.imageView.image = #imageLiteral(resourceName: "addimage")
+        self.iconName.image = #imageLiteral(resourceName: "trip")
     }
     
+    @IBAction func handleTapImage(_ sender: Any) {
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit

@@ -14,6 +14,7 @@ class DetailsTripController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+
     @IBAction func finished(_ sender: Any) {
        // self.trip!.changeFinished()
         
@@ -26,6 +27,8 @@ class DetailsTripController: UIViewController {
         self.name.text = trip?.name
         if let dataImage = trip?.image {
             self.imageView.image = UIImage(data: dataImage)
+        } else {
+            self.imageView.image = #imageLiteral(resourceName: "addimage")
         }
         
     }
