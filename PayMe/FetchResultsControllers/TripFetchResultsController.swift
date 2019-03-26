@@ -63,6 +63,7 @@ class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
+            print("jeff le best")
             if let newIndexPath = newIndexPath{
                 self.tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
@@ -74,6 +75,7 @@ class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
             }
             
         case .update:
+            print("alia hhhhhh")
             if let indexPath = indexPath {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }

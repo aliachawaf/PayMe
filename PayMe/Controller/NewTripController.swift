@@ -8,19 +8,44 @@
 
 import UIKit
 
-class NewTripController:UIViewController, UITextFieldDelegate {
+class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
     @IBOutlet weak var name: UITextField!
     
     var newTrip: Trip?
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
+    
+    @IBAction func loadImage(_ sender: Any) {
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -28,7 +53,12 @@ class NewTripController:UIViewController, UITextFieldDelegate {
         if segue.identifier == "okAddTrip" {
             let name : String  = self.name.text!
             
-            self.newTrip = Trip(name: name, finished: false)
+            if let imageData = imageView.image?.jpegData(compressionQuality: 1) {
+                self.newTrip = Trip(name: name, finished: false, image: imageData)
+            } else {
+                self.newTrip = Trip(name: name, finished: false)
+            }
+
             self.dismiss(animated: true, completion: nil)
         }
         else{
