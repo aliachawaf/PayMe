@@ -13,25 +13,41 @@ class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
     
     let tableView: UITableView
     
+    
     init(view: UITableView) {
         self.tableView = view
         super.init()
         do {
-            try self.tripsFetched.performFetch()
+            try self.tripsFetchedNotFinished.performFetch()
+            try self.tripsFetchedFinished.performFetch()
+           
         }
         catch let error as NSError {
             fatalError(error.description)
         }
     }
-    
-    lazy var tripsFetched: NSFetchedResultsController<Trip> = {
+    // var monNSFetchResCtrl: NSFetchedResultsController?
+    lazy var tripsFetchedNotFinished: NSFetchedResultsController<Trip> = {
         let request: NSFetchRequest<Trip> = Trip.fetchRequest()
+        request.predicate = NSPredicate(format: "pfinished == %@", NSNumber(value: false))
         request.sortDescriptors =
             [NSSortDescriptor(key:#keyPath(Trip.pname), ascending: true)]
         let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
         fetchResultController.delegate = self
         return fetchResultController
     }()
+    
+    lazy var tripsFetchedFinished: NSFetchedResultsController<Trip> = {
+        let request: NSFetchRequest<Trip> = Trip.fetchRequest()
+        request.predicate = NSPredicate(format: "pfinished == %@", NSNumber(value: true))
+        request.sortDescriptors =
+            [NSSortDescriptor(key:#keyPath(Trip.pname), ascending: true)]
+        let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController.delegate = self
+        return fetchResultController
+    }()
+    
+    
     
     
     
@@ -52,6 +68,7 @@ class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
             }
             
         case .delete:
+            print("damien")
             if let indexPath = indexPath {
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }

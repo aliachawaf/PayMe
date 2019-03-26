@@ -36,8 +36,8 @@
                                                         <constraint firstAttribute="height" constant="43" id="sUL-Hj-6L5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoX-iH-ROP">
-                                                    <rect key="frame" x="66" y="11" width="42" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoX-iH-ROP">
+                                                    <rect key="frame" x="66" y="11" width="0.0" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="wgq-hZ-vuG" kind="show" id="dLw-ic-buG"/>
+                                            <segue destination="wgq-hZ-vuG" kind="show" identifier="showTrip" id="dLw-ic-buG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -85,17 +85,17 @@
                     <navigationItem key="navigationItem" title="VOYAGES" id="Ywp-aC-9aL"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tripTableView" destination="rGM-WM-MHP" id="hnC-pn-505"/>
+                        <outlet property="tripTableView" destination="rGM-WM-MHP" id="hIj-Su-0Iy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="787.55622188905556"/>
         </scene>
-        <!--View Controller-->
+        <!--Details Trip Controller-->
         <scene sceneID="5pK-3V-DTc">
             <objects>
-                <viewController id="wgq-hZ-vuG" sceneMemberID="viewController">
+                <viewController id="wgq-hZ-vuG" customClass="DetailsTripController" customModule="PayMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="olB-80-oi8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,13 +126,16 @@
                         <viewLayoutGuide key="safeArea" id="aSG-TH-qvo"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Réglé" id="ZK5-4L-hFE"/>
+                        <barButtonItem title="Fini" id="ZK5-4L-hFE"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cdd-zO-bql"/>
                         <barButtonItem title="Modifier" id="2A7-00-Reo"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dPy-gc-Mk4"/>
                         <barButtonItem systemItem="trash" id="typ-gg-kHC"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="name" destination="hFK-62-IgH" id="9Kz-fm-5Vx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQF-zF-OMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,6 +299,9 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" updatesFrequently="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="sx5-kR-vJY" firstAttribute="trailing" secondItem="AWX-Hg-Xnx" secondAttribute="trailing" id="L5m-jo-Opx"/>
                             <constraint firstItem="AWX-Hg-Xnx" firstAttribute="top" secondItem="sx5-kR-vJY" secondAttribute="top" id="V2w-3c-r7d"/>

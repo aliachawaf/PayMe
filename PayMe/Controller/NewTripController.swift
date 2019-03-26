@@ -27,13 +27,14 @@ class NewTripController:UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "okAddTrip" {
             let name : String  = self.name.text!
-            print("eeeeeeeeeeeeeeeee")
-            print(name)
             
-            self.newTrip = Trip(name: name)
+            self.newTrip = Trip(name: name, finished: false)
+            self.dismiss(animated: true, completion: nil)
         }
         else{
             self.newTrip = nil
+            self.dismiss(animated: false, completion: nil)
+
         }
     }
     

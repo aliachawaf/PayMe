@@ -15,10 +15,10 @@
 		4131EF2922478DDE0077CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4131EF2722478DDE0077CD81 /* LaunchScreen.storyboard */; };
 		4131EF3422478DDE0077CD81 /* PayMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3322478DDE0077CD81 /* PayMeTests.swift */; };
 		4131EF3F22478DDE0077CD81 /* PayMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */; };
+		415C0E84224A2CCB00C41731 /* DetailsTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C0E83224A2CCB00C41731 /* DetailsTripController.swift */; };
 		4195316D22494CF3005CC7AA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195316C22494CF3005CC7AA /* CoreDataManager.swift */; };
 		4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195316F22494E78005CC7AA /* TripFetchResultsController.swift */; };
 		4195317422495182005CC7AA /* TripCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195317322495182005CC7AA /* TripCoreData.swift */; };
-		4195317622495320005CC7AA /* TripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195317522495320005CC7AA /* TripDAO.swift */; };
 		41953178224953A6005CC7AA /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41953177224953A6005CC7AA /* TripTableViewController.swift */; };
 		4195317B22495478005CC7AA /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195317A22495478005CC7AA /* TripViewModel.swift */; };
 		4195317D22495705005CC7AA /* NewTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195317C22495705005CC7AA /* NewTripController.swift */; };
@@ -56,10 +56,10 @@
 		4131EF3A22478DDE0077CD81 /* PayMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMeUITests.swift; sourceTree = "<group>"; };
 		4131EF4022478DDE0077CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		415C0E83224A2CCB00C41731 /* DetailsTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTripController.swift; sourceTree = "<group>"; };
 		4195316C22494CF3005CC7AA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4195316F22494E78005CC7AA /* TripFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFetchResultsController.swift; sourceTree = "<group>"; };
 		4195317322495182005CC7AA /* TripCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCoreData.swift; sourceTree = "<group>"; };
-		4195317522495320005CC7AA /* TripDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDAO.swift; sourceTree = "<group>"; };
 		41953177224953A6005CC7AA /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 		4195317A22495478005CC7AA /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
 		4195317C22495705005CC7AA /* NewTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripController.swift; sourceTree = "<group>"; };
@@ -115,7 +115,6 @@
 			children = (
 				4195317922495449005CC7AA /* ViewModels */,
 				4195317222495163005CC7AA /* Models */,
-				4195317122495157005CC7AA /* DAO */,
 				4195316E22494E42005CC7AA /* FetchResultsControllers */,
 				4195316B22494CC6005CC7AA /* Controller */,
 				4131EF1B22478DDD0077CD81 /* AppDelegate.swift */,
@@ -153,6 +152,7 @@
 			children = (
 				41953177224953A6005CC7AA /* TripTableViewController.swift */,
 				4195317C22495705005CC7AA /* NewTripController.swift */,
+				415C0E83224A2CCB00C41731 /* DetailsTripController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,14 +163,6 @@
 				4195316F22494E78005CC7AA /* TripFetchResultsController.swift */,
 			);
 			path = FetchResultsControllers;
-			sourceTree = "<group>";
-		};
-		4195317122495157005CC7AA /* DAO */ = {
-			isa = PBXGroup;
-			children = (
-				4195317522495320005CC7AA /* TripDAO.swift */,
-			);
-			path = DAO;
 			sourceTree = "<group>";
 		};
 		4195317222495163005CC7AA /* Models */ = {
@@ -325,8 +317,8 @@
 				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,
 				4195317422495182005CC7AA /* TripCoreData.swift in Sources */,
 				4195317B22495478005CC7AA /* TripViewModel.swift in Sources */,
+				415C0E84224A2CCB00C41731 /* DetailsTripController.swift in Sources */,
 				4195317D22495705005CC7AA /* NewTripController.swift in Sources */,
-				4195317622495320005CC7AA /* TripDAO.swift in Sources */,
 				4195316D22494CF3005CC7AA /* CoreDataManager.swift in Sources */,
 				41953178224953A6005CC7AA /* TripTableViewController.swift in Sources */,
 				4131EF1C22478DDD0077CD81 /* AppDelegate.swift in Sources */,

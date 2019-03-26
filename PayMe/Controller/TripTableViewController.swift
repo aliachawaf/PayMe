@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDelegate {
     
@@ -19,7 +20,7 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         
         self.tripTV = tv
         self.fetchResultController = TripFetchResultsController(view: tripTV)
-        self.tripViewModel = TripViewModel(data: self.fetchResultController.tripsFetched)
+        self.tripViewModel = TripViewModel(data: self.fetchResultController.tripsFetchedNotFinished)
         
         super.init()
         self.tripTV.dataSource = self
@@ -44,10 +45,6 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
     }
     
     
-    
-    
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -58,17 +55,27 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print("table view")
-        print(tripViewModel.count)
-        
         // Fetch a cell of the appropriate type.
         let cell = tripTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
         
         // Configure the cell’s contents
         
-        cell.textLabel!.text = self.tripViewModel.get(personAt: indexPath.row)?.name
+        cell.textLabel!.text = self.tripViewModel.get(tripAt: indexPath.row)?.name
         
         return cell
     }
-
+    
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            self.tripViewModel.delete(tripAt: indexPath)
+        }
+    }
+    
+    
 }

@@ -44,7 +44,7 @@ class TripViewModel {
         return self.tripsFetched.fetchedObjects?.count ?? 0
     }
     
-    func get(personAt index: Int) -> Trip? {
+    func get(tripAt index: Int) -> Trip? {
         return self.tripsFetched.object(at: IndexPath(row: index, section: 0))
     }
     
@@ -57,6 +57,15 @@ class TripViewModel {
             self.delegate?.tripAdded(at: indexPath)
         }
     }
+    
+    public func delete(tripAt indexPath: IndexPath){
+        
+            CoreDataManager.context.delete(tripsFetched.object(at: indexPath))
+            self.delegate?.tripDeleted(at: indexPath)
+        
+        
+    }
+    
 
 }
 

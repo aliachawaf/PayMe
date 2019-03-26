@@ -10,10 +10,12 @@ import Foundation
 
 extension Trip {
     
-    public var name:String { return self.pname ?? "" }
+    public var name: String { return self.pname ?? "" }
+    public var finished: Bool { return self.pfinished}
     
-    convenience init(name: String) {
+    convenience init(name: String, finished: Bool) {
         self.init(context: CoreDataManager.context)
         self.pname = name
+        self.pfinished = finished
     }
 }

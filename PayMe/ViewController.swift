@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var TableViewController: TripTableViewController!
+    var trip: Trip?
+
 
     @IBOutlet weak var tripTableView: UITableView!
     
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    
     // segue ViewControllerB -> ViewController
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
         if let newTripController = sender.source as? NewTripController {
@@ -27,8 +31,36 @@ class ViewController: UIViewController {
             if let trip = newTripController.newTrip{
                 self.TableViewController.tripViewModel.add(trip: trip)
                 self.TableViewController.dataSetChanged()
+                
+                self.trip = trip
+                print("\(trip)")
+                if self.trip != nil {
+                    print(trip.name)
+                }
+                
+                performSegue(withIdentifier: "showTrip", sender: self)
             } }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTrip"{
+            if let destController = segue.destination as? DetailsTripController {
+              
+                if let cell = sender as? UITableViewCell {
+                    guard let index = self.tripTableView.indexPath(for: cell) else {return}
+                    destController.trip = self.TableViewController.tripViewModel.get(tripAt: index.row)
+            
+                }
+                else if sender as? UIViewController == self {
+                     destController.trip = self.trip
+             
+                }
+            }
+        }
+    }
+    
+
 
 }
 
