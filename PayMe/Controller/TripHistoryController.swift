@@ -20,4 +20,17 @@ class TripHistoryController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTrip"{
+            if let destController = segue.destination as? DetailsTripController {
+                
+                if let cell = sender as? UITableViewCell {
+                    guard let index = self.tripHistoryTableView.indexPath(for: cell) else {return}
+                    destController.trip = self.TableViewHistoryController.tripViewModel.get(tripAt: index.row)
+                    
+                }
+            }
+        }
+    }
+    
 }
