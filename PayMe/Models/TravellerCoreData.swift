@@ -27,6 +27,4 @@ extension Traveller {
     func fullname() -> String {
         return self.firstname + " " + self.lastname
     }
-
- 
 }

@@ -9,12 +9,14 @@
 import UIKit
 
 class DetailsTripController: UIViewController {
-
+    
     @IBOutlet weak var name: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var travellersTableView: UITableView!
+    
+    @IBOutlet weak var finishedButton: UIBarButtonItem!
     
     var trip: Trip?
     var travellersTV: TravellerTableViewController?
@@ -28,6 +30,12 @@ class DetailsTripController: UIViewController {
             self.imageView.image = #imageLiteral(resourceName: "addimage")
         }
         
+        if (self.trip!.isFinished()) {
+            self.finishedButton.title = "Pas Fini"
+        } else {
+            self.finishedButton.title = "Fini"
+        }
+        
         self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
         
     }
@@ -39,8 +47,10 @@ class DetailsTripController: UIViewController {
     
     @IBAction func finished(_ sender: Any) {
         self.trip!.changeFinished()
+        self.viewDidLoad()
         
     }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

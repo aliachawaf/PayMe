@@ -31,4 +31,8 @@ extension Trip {
     func changeFinished(){
         self.pfinished = !self.pfinished
     }
+    
+    func isFinished() -> Bool {
+        return self.pfinished
+    }
 }

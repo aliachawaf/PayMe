@@ -145,6 +145,7 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="finishedButton" destination="ZK5-4L-hFE" id="VJG-CY-TCL"/>
                         <outlet property="imageView" destination="xoR-CV-FFm" id="8gQ-1s-A0t"/>
                         <outlet property="name" destination="hFK-62-IgH" id="9Kz-fm-5Vx"/>
                         <outlet property="travellersTableView" destination="st8-wU-cy1" id="UBP-xP-kDt"/>

@@ -30,7 +30,6 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
     }
     
     func dataSetChanged() {
-        print("reload")
         self.travellerTV.reloadData()
     }
     
@@ -67,7 +66,6 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
     }
     
     
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -77,7 +75,5 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
             self.travellerViewModel.delete(tripAt: indexPath)
         }
     }
-    
-    
 
 }
