@@ -3,7 +3,7 @@
 //  PayMe
 //
 //  Created by Alia Chawaf on 26/03/2019.
-//  Copyright © 2019 Chawaf Alia & Gestin Rémi. All rights reserved.
+//  Copyright © 2019 Chawaf Alia. All rights reserved.
 //
 
 import UIKit
@@ -33,8 +33,8 @@ class DetailsTripController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
+        self.travellersTV!.dataSetChanged()
+        //self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
     }
     
     @IBAction func finished(_ sender: Any) {
@@ -60,7 +60,7 @@ class DetailsTripController: UIViewController {
                 
                 print("\(traveller)")
                 self.travellersTV!.travellerViewModel.add(traveller: traveller)
-                self.travellersTV!.dataSetChanged()
+                
             }
         }
     }

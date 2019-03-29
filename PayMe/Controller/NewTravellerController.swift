@@ -32,8 +32,11 @@ class NewTravellerController: UIViewController, UITextFieldDelegate, UINavigatio
             let departureDate : Date  = self.departureDate.date
             
             self.newTraveller = Traveller(firstname: firstname, lastname: lastname, arrival: arrivalDate, departure: departureDate, trip: self.trip!)
+            
+            CoreDataManager.save()
 
             self.dismiss(animated: true, completion: nil)
+            
         }
         else{
             self.newTraveller = nil
