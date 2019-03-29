@@ -32,6 +32,11 @@ class DetailsTripController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
+    }
+    
     @IBAction func finished(_ sender: Any) {
         self.trip!.changeFinished()
         

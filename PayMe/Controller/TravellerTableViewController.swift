@@ -30,6 +30,7 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
     }
     
     func dataSetChanged() {
+        print("reload")
         self.travellerTV.reloadData()
     }
     
@@ -60,7 +61,7 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
         
         // Configure the cell’s contents
-        cell.textLabel!.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.firstname
+        cell.textLabel!.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname()
         
         return cell
     }

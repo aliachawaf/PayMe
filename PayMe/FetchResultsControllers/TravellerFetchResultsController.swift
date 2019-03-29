@@ -56,7 +56,7 @@ class TravellerFetchResultsController: NSObject, NSFetchedResultsControllerDeleg
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            
+            print("add traveller")
             if let newIndexPath = newIndexPath{
                 self.tableView.insertRows(at: [newIndexPath], with: .automatic)
             }

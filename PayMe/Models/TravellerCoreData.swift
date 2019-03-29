@@ -23,6 +23,10 @@ extension Traveller {
         self.parrivalDate = arrival
         self.ptrip = trip
     }
+    
+    func fullname() -> String {
+        return self.firstname + " " + self.lastname
+    }
 
  
 }
