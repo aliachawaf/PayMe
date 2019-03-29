@@ -14,13 +14,10 @@ class DetailsTripController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-
-    @IBAction func finished(_ sender: Any) {
-       // self.trip!.changeFinished()
-        
-    }
+    @IBOutlet weak var travellersTableView: UITableView!
     
     var trip: Trip?
+    var travellersTV: TravellerTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +28,38 @@ class DetailsTripController: UIViewController {
             self.imageView.image = #imageLiteral(resourceName: "addimage")
         }
         
+        self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
+        
     }
+    
+    @IBAction func finished(_ sender: Any) {
+        self.trip!.changeFinished()
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addTraveller"{
+            if let destController = segue.destination as? NewTravellerController {
+                
+                destController.trip = self.trip!
+            }
+        }
+    }
+    
+    
+    @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
+        if let newTravellerController = sender.source as? NewTravellerController {
+            
+            if let traveller = newTravellerController.newTraveller {
+                
+                print("\(traveller)")
+                self.travellersTV!.travellerViewModel.add(traveller: traveller)
+                self.travellersTV!.dataSetChanged()
+            }
+        }
+    }
+    
+    
 }
 

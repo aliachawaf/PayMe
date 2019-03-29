@@ -53,7 +53,7 @@ class TripHistoryFetchResultsController: NSObject, NSFetchedResultsControllerDel
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            print("jeff le best")
+     
             if let newIndexPath = newIndexPath{
                 self.tableView.insertRows(at: [newIndexPath], with: .automatic)
             }

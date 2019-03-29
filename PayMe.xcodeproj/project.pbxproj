@@ -26,6 +26,9 @@
 		419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7CA224E1E2900F83996 /* TripHistoryFetchResultsController.swift */; };
 		419FF7CD224E26B900F83996 /* TravellerCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7CC224E26B900F83996 /* TravellerCoreData.swift */; };
 		419FF7CF224E29DF00F83996 /* TripHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7CE224E29DF00F83996 /* TripHistoryController.swift */; };
+		419FF7D1224E5A9300F83996 /* TravellerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7D0224E5A9300F83996 /* TravellerViewModel.swift */; };
+		419FF7D3224E615500F83996 /* TravellerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7D2224E615500F83996 /* TravellerTableViewController.swift */; };
+		419FF7D5224E648B00F83996 /* NewTravellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7D4224E648B00F83996 /* NewTravellerController.swift */; };
 		41A83C00224E15D600469D3E /* TravellerFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +75,9 @@
 		419FF7CA224E1E2900F83996 /* TripHistoryFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryFetchResultsController.swift; sourceTree = "<group>"; };
 		419FF7CC224E26B900F83996 /* TravellerCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerCoreData.swift; sourceTree = "<group>"; };
 		419FF7CE224E29DF00F83996 /* TripHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryController.swift; sourceTree = "<group>"; };
+		419FF7D0224E5A9300F83996 /* TravellerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerViewModel.swift; sourceTree = "<group>"; };
+		419FF7D2224E615500F83996 /* TravellerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerTableViewController.swift; sourceTree = "<group>"; };
+		419FF7D4224E648B00F83996 /* NewTravellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravellerController.swift; sourceTree = "<group>"; };
 		41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerFetchResultsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,11 +166,13 @@
 		4195316B22494CC6005CC7AA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				41953177224953A6005CC7AA /* TripTableViewController.swift */,
 				4195317C22495705005CC7AA /* NewTripController.swift */,
+				41953177224953A6005CC7AA /* TripTableViewController.swift */,
 				415C0E83224A2CCB00C41731 /* DetailsTripController.swift */,
 				419FF7C8224E1DC400F83996 /* TripHistoryTableViewController.swift */,
 				419FF7CE224E29DF00F83996 /* TripHistoryController.swift */,
+				419FF7D2224E615500F83996 /* TravellerTableViewController.swift */,
+				419FF7D4224E648B00F83996 /* NewTravellerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				4195317A22495478005CC7AA /* TripViewModel.swift */,
+				419FF7D0224E5A9300F83996 /* TravellerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -327,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419FF7D1224E5A9300F83996 /* TravellerViewModel.swift in Sources */,
 				4131EF2422478DDD0077CD81 /* PayMe.xcdatamodeld in Sources */,
 				4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */,
 				419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */,
@@ -334,10 +344,12 @@
 				419FF7CD224E26B900F83996 /* TravellerCoreData.swift in Sources */,
 				4195317422495182005CC7AA /* TripCoreData.swift in Sources */,
 				4195317B22495478005CC7AA /* TripViewModel.swift in Sources */,
+				419FF7D5224E648B00F83996 /* NewTravellerController.swift in Sources */,
 				415C0E84224A2CCB00C41731 /* DetailsTripController.swift in Sources */,
 				4195317D22495705005CC7AA /* NewTripController.swift in Sources */,
 				419FF7C9224E1DC400F83996 /* TripHistoryTableViewController.swift in Sources */,
 				4195316D22494CF3005CC7AA /* CoreDataManager.swift in Sources */,
+				419FF7D3224E615500F83996 /* TravellerTableViewController.swift in Sources */,
 				41953178224953A6005CC7AA /* TripTableViewController.swift in Sources */,
 				4131EF1C22478DDD0077CD81 /* AppDelegate.swift in Sources */,
 				419FF7CF224E29DF00F83996 /* TripHistoryController.swift in Sources */,

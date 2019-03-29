@@ -29,11 +29,8 @@ protocol TripViewModelDelegate {
 
 class TripViewModel {
     
-    
     var delegate : TripViewModelDelegate? = nil
     var tripsFetched: NSFetchedResultsController<Trip>
-    
-    
     
     init(data: NSFetchedResultsController<Trip>) {
         self.tripsFetched = data
@@ -47,8 +44,6 @@ class TripViewModel {
     func get(tripAt index: Int) -> Trip? {
         return self.tripsFetched.object(at: IndexPath(row: index, section: 0))
     }
-    
-    
     
     
     public func add(trip: Trip){
@@ -65,7 +60,5 @@ class TripViewModel {
         
         
     }
-    
-
 }
 

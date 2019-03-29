@@ -31,7 +31,7 @@ class ViewController: UIViewController {
                 self.TableViewController.dataSetChanged()
                 
                 self.trip = trip
-                print("\(trip)")
+
                 if self.trip != nil {
                     print(trip.name)
                 }
@@ -57,8 +57,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-
 
 }
 
