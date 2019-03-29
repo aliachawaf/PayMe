@@ -2,19 +2,19 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18E205e" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Traveller" representedClassName="Traveller" syncable="YES" codeGenerationType="class">
         <attribute name="parrivalDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pdepartureDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pfirstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plastname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="rdepartureDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="travellers" inverseEntity="Trip" syncable="YES"/>
+        <relationship name="ptrip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="ptravellers" inverseEntity="Trip" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
         <attribute name="pfinished" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pimage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="pname" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="travellers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Traveller" inverseName="trip" inverseEntity="Traveller" syncable="YES"/>
+        <relationship name="ptravellers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Traveller" inverseName="ptrip" inverseEntity="Traveller" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Trip" positionX="-392.53125" positionY="2980.31640625" width="128" height="103"/>
-        <element name="Traveller" positionX="-104.86328125" positionY="2904.29296875" width="128" height="118"/>
+        <element name="Traveller" positionX="-104.86328125" positionY="2904.29296875" width="128" height="120"/>
+        <element name="Trip" positionX="-392.53125" positionY="2980.31640625" width="128" height="105"/>
     </elements>
 </model>

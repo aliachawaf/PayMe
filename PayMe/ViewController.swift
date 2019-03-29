@@ -15,14 +15,12 @@ class ViewController: UIViewController {
 
 
     @IBOutlet weak var tripTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.TableViewController = TripTableViewController(tv: tripTableView)
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-    
-    
     
     // segue ViewControllerB -> ViewController
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {

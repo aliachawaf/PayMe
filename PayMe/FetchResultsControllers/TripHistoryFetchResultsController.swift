@@ -1,16 +1,16 @@
 //
-//  TripFetchResultsController.swift
+//  TripHistoryFetchResultsController.swift
 //  PayMe
 //
-//  Created by Alia Chawaf on 25/03/2019.
+//  Created by Alia Chawaf on 29/03/2019.
 //  Copyright © 2019 Chawaf Alia & Gestin Rémi. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
-    
+class TripHistoryFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
+
     let tableView: UITableView
     
     
@@ -18,17 +18,17 @@ class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
         self.tableView = view
         super.init()
         do {
-            try self.tripsFetchedNotFinished.performFetch()
-           
+            try self.tripsHistoryFetched.performFetch()
+            
         }
         catch let error as NSError {
             fatalError(error.description)
         }
     }
     // var monNSFetchResCtrl: NSFetchedResultsController?
-    lazy var tripsFetchedNotFinished: NSFetchedResultsController<Trip> = {
+    lazy var tripsHistoryFetched: NSFetchedResultsController<Trip> = {
         let request: NSFetchRequest<Trip> = Trip.fetchRequest()
-        request.predicate = NSPredicate(format: "pfinished == %@", NSNumber(value: false))
+        request.predicate = NSPredicate(format: "pfinished == %@", NSNumber(value: true))
         request.sortDescriptors =
             [NSSortDescriptor(key:#keyPath(Trip.pname), ascending: true)]
         let fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.context, sectionNameKeyPath: nil, cacheName: nil)
