@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.TableViewController = TripTableViewController(tv: tripTableView)
-        
     }
     
     // segue ViewControllerB -> ViewController
