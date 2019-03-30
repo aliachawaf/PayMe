@@ -12,7 +12,6 @@ import CoreData
 class TripHistoryTableViewController: NSObject, UITableViewDataSource, TripViewModelDelegate {
     
     var tripTV: UITableView!
-    
     var tripViewModel: TripViewModel
     let fetchResultController : TripHistoryFetchResultsController
     
@@ -25,25 +24,41 @@ class TripHistoryTableViewController: NSObject, UITableViewDataSource, TripViewM
         super.init()
         self.tripTV.dataSource = self
         self.tripViewModel.delegate = self
-        
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TripViewModelDelegate
+    
+    /// called when set globally changes
     func dataSetChanged() {
         self.tripTV.reloadData()
     }
     
+    /// called when a Trip is deleted from set history
+    ///
+    /// - Parameter indexPath: (section,row) of deletion
     func tripDeleted(at indexPath: IndexPath) {
         self.tripTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    /// called when a Trip of the history is updated in set
+    ///
+    /// - Parameter indexPath: (section, row) of updating
     func tripUpdated(at indexPath: IndexPath) {
         self.tripTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    
+    /// called when a Trip is added to set of history
+    ///
+    /// - Parameter indexPath: (section,row) of add
     func tripAdded(at indexPath: IndexPath) {
         self.tripTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -68,12 +83,8 @@ class TripHistoryTableViewController: NSObject, UITableViewDataSource, TripViewM
             cell.imageView?.image = #imageLiteral(resourceName: "addimage")
         }
         
-        
-        
         return cell
     }
-    
-    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -84,6 +95,4 @@ class TripHistoryTableViewController: NSObject, UITableViewDataSource, TripViewM
             self.tripViewModel.delete(tripAt: indexPath)
         }
     }
-    
-    
 }

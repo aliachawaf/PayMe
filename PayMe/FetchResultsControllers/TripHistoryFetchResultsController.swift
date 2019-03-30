@@ -10,9 +10,8 @@ import UIKit
 import CoreData
 
 class TripHistoryFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
-
-    let tableView: UITableView
     
+    let tableView: UITableView
     
     init(view: UITableView) {
         self.tableView = view
@@ -25,7 +24,10 @@ class TripHistoryFetchResultsController: NSObject, NSFetchedResultsControllerDel
             fatalError(error.description)
         }
     }
-    // var monNSFetchResCtrl: NSFetchedResultsController?
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - FetchResultController
+    
     lazy var tripsHistoryFetched: NSFetchedResultsController<Trip> = {
         let request: NSFetchRequest<Trip> = Trip.fetchRequest()
         request.predicate = NSPredicate(format: "pfinished == %@", NSNumber(value: true))
@@ -35,10 +37,6 @@ class TripHistoryFetchResultsController: NSObject, NSFetchedResultsControllerDel
         fetchResultController.delegate = self
         return fetchResultController
     }()
-    
-    
-    
-    
     
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -53,7 +51,7 @@ class TripHistoryFetchResultsController: NSObject, NSFetchedResultsControllerDel
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-     
+            
             if let newIndexPath = newIndexPath{
                 self.tableView.insertRows(at: [newIndexPath], with: .automatic)
             }

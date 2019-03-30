@@ -13,19 +13,21 @@ class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
     
     let tableView: UITableView
     
-    
     init(view: UITableView) {
         self.tableView = view
         super.init()
         do {
             try self.tripsFetchedNotFinished.performFetch()
-           
+            
         }
         catch let error as NSError {
             fatalError(error.description)
         }
     }
-    // var monNSFetchResCtrl: NSFetchedResultsController?
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - FetchResultController
+    
     lazy var tripsFetchedNotFinished: NSFetchedResultsController<Trip> = {
         let request: NSFetchRequest<Trip> = Trip.fetchRequest()
         request.predicate = NSPredicate(format: "pfinished == %@", NSNumber(value: false))
@@ -35,10 +37,6 @@ class TripFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
         fetchResultController.delegate = self
         return fetchResultController
     }()
-    
-    
-    
-    
     
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

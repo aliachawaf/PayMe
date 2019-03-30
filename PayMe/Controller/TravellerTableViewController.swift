@@ -26,25 +26,40 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         super.init()
         self.travellerTV.dataSource = self
         self.travellerViewModel.delegate = self
-        
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TravellerViewModelDelegate
+    
+    /// called when set globally changes
     func dataSetChanged() {
         self.travellerTV.reloadData()
     }
     
+    /// called when a Traveller is deleted from set
+    ///
+    /// - Parameter indexPath: (section,row) of deletion
     func travellerDeleted(at indexPath: IndexPath) {
         self.travellerTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    /// called when a Traveller is updated in set
+    ///
+    /// - Parameter indexPath: (section, row) of updating
     func travellerUpdated(at indexPath: IndexPath) {
         self.travellerTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    /// called when a Traveller is added to set
+    ///
+    /// - Parameter indexPath: (section,row) of add
     func travellerAdded(at indexPath: IndexPath) {
         self.travellerTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -75,5 +90,15 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
             self.travellerViewModel.delete(tripAt: indexPath)
         }
     }
-
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        let n = travellerViewModel.count
+        
+        if  n > 1 {
+            return String(n) + " Voyageurs"
+        } else {
+            return String(n) + " Voyageur"
+        }
+    }
 }

@@ -12,7 +12,6 @@ import CoreData
 class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDelegate {
     
     var tripTV: UITableView!
-    
     var tripViewModel: TripViewModel
     let fetchResultController : TripFetchResultsController
     
@@ -25,25 +24,40 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         super.init()
         self.tripTV.dataSource = self
         self.tripViewModel.delegate = self
-        
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TripViewModelDelegate
+    
+    /// called when set globally changes
     func dataSetChanged() {
         self.tripTV.reloadData()
     }
     
+    /// called when a Trip is deleted from set
+    ///
+    /// - Parameter indexPath: (section,row) of deletion
     func tripDeleted(at indexPath: IndexPath) {
         self.tripTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    /// called when a Trip is updated in set
+    ///
+    /// - Parameter indexPath: (section, row) of updating
     func tripUpdated(at indexPath: IndexPath) {
         self.tripTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    /// called when a Trip is added to set
+    ///
+    /// - Parameter indexPath: (section,row) of add
     func tripAdded(at indexPath: IndexPath) {
         self.tripTV.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableView DataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -62,18 +76,13 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         cell.textLabel!.text = self.tripViewModel.get(tripAt: indexPath.row)?.name
         
         if let dataImage = self.tripViewModel.get(tripAt: indexPath.row)?.image {
-    
             cell.imageView?.image = UIImage(data: dataImage)
         } else {
             cell.imageView?.image = #imageLiteral(resourceName: "addimage")
         }
         
-        
-        
         return cell
     }
-    
-    
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -84,6 +93,4 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
             self.tripViewModel.delete(tripAt: indexPath)
         }
     }
-    
-    
 }

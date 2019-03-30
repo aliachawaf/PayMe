@@ -91,34 +91,40 @@
                                     <constraint firstAttribute="width" constant="125" id="wvF-74-KtK"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="st8-wU-cy1">
-                                <rect key="frame" x="16" y="275" width="343" height="235"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sv-ew-q5K">
+                                <rect key="frame" x="336" y="294" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" red="0.093078874049999996" green="0.60111123320000004" blue="0.54533272980000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xVt-rW-JS0" kind="presentation" identifier="addTraveller" id="0E3-Gd-2B1"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="st8-wU-cy1">
+                                <rect key="frame" x="5" y="324" width="365" height="235"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTypeIdentifier" id="t90-qa-4dA">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="365" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t90-qa-4dA" id="oK0-90-6aW">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S73-yq-ORW">
-                                <rect key="frame" x="197" y="205" width="118" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ajouter Voyageur"/>
-                                <connections>
-                                    <segue destination="xVt-rW-JS0" kind="presentation" identifier="addTraveller" id="czt-az-hRo"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.093078874049999996" green="0.60111123320000004" blue="0.54533272980000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hFK-62-IgH" firstAttribute="top" secondItem="olB-80-oi8" secondAttribute="topMargin" constant="56" id="IBW-b3-yRh"/>
+                            <constraint firstItem="aSG-TH-qvo" firstAttribute="trailing" secondItem="st8-wU-cy1" secondAttribute="trailing" constant="5" id="KOw-hW-AdB"/>
+                            <constraint firstItem="st8-wU-cy1" firstAttribute="bottom" secondItem="aSG-TH-qvo" secondAttribute="bottom" id="Tqt-T5-mjD"/>
                             <constraint firstItem="hFK-62-IgH" firstAttribute="leading" secondItem="xoR-CV-FFm" secondAttribute="trailing" constant="40" id="azQ-hu-qxh"/>
+                            <constraint firstItem="st8-wU-cy1" firstAttribute="top" secondItem="aSG-TH-qvo" secondAttribute="top" constant="324" id="fES-iV-31S"/>
+                            <constraint firstItem="st8-wU-cy1" firstAttribute="leading" secondItem="aSG-TH-qvo" secondAttribute="leading" constant="5" id="kPk-f3-wxX"/>
                             <constraint firstItem="xoR-CV-FFm" firstAttribute="top" secondItem="aSG-TH-qvo" secondAttribute="top" constant="20" id="naL-aR-jik"/>
                             <constraint firstItem="xoR-CV-FFm" firstAttribute="leading" secondItem="aSG-TH-qvo" secondAttribute="leading" constant="16" id="uGL-pj-2Ge"/>
                         </constraints>
@@ -128,7 +134,7 @@
                         <barButtonItem title="Fini" id="ZK5-4L-hFE">
                             <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="finished:" destination="wgq-hZ-vuG" id="MzS-Rw-Pnx"/>
+                                <action selector="changeFinished:" destination="wgq-hZ-vuG" id="2Df-BE-P5u"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cdd-zO-bql"/>
@@ -229,6 +235,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="575123954.22367001">
                                     <!--2019-03-24 12:39:14 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="changeDatePickerFormat:" destination="xVt-rW-JS0" eventType="valueChanged" id="LhB-RV-jls"/>
+                                </connections>
                             </datePicker>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCN-M6-RCh">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -326,7 +335,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYW-t1-017" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OmU-uf-5DR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3253.5999999999999" y="787.55622188905556"/>
+            <point key="canvasLocation" x="3154" y="808"/>
         </scene>
         <!--New Trip Controller-->
         <scene sceneID="Hgs-nF-o4U">

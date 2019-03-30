@@ -21,7 +21,10 @@ class NewTravellerController: UIViewController, UITextFieldDelegate, UINavigatio
     override func viewDidLoad() {
         super.viewDidLoad()
     }
- 
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -34,7 +37,7 @@ class NewTravellerController: UIViewController, UITextFieldDelegate, UINavigatio
             self.newTraveller = Traveller(firstname: firstname, lastname: lastname, arrival: arrivalDate, departure: departureDate, trip: self.trip!)
             
             CoreDataManager.save()
-
+            
             self.dismiss(animated: true, completion: nil)
             
         }
@@ -44,6 +47,10 @@ class NewTravellerController: UIViewController, UITextFieldDelegate, UINavigatio
             
         }
     }
+    
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -56,6 +63,5 @@ class NewTravellerController: UIViewController, UITextFieldDelegate, UINavigatio
                 return true
             } }
         return false
-        
     }
 }

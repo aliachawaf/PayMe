@@ -9,7 +9,7 @@
 import UIKit
 
 class TripHistoryController: UIViewController {
-
+    
     var TableViewHistoryController: TripHistoryTableViewController!
     
     @IBOutlet weak var tripHistoryTableView: UITableView!
@@ -20,6 +20,8 @@ class TripHistoryController: UIViewController {
         
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTrip"{
             if let destController = segue.destination as? DetailsTripController {
@@ -32,5 +34,4 @@ class TripHistoryController: UIViewController {
             }
         }
     }
-    
 }

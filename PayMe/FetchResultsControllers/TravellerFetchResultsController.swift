@@ -12,9 +12,7 @@ import CoreData
 class TravellerFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
     
     let tableView: UITableView
-    
     var trip: Trip
-    
     
     init(view: UITableView, trip: Trip) {
         self.tableView = view
@@ -28,7 +26,10 @@ class TravellerFetchResultsController: NSObject, NSFetchedResultsControllerDeleg
             fatalError(error.description)
         }
     }
-    // var monNSFetchResCtrl: NSFetchedResultsController?
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - FetchResultController
+    
     lazy var travellersFetched: NSFetchedResultsController<Traveller> = {
         let request: NSFetchRequest<Traveller> = Traveller.fetchRequest()
         request.predicate = NSPredicate(format: "ptrip == %@", self.trip)
@@ -38,10 +39,6 @@ class TravellerFetchResultsController: NSObject, NSFetchedResultsControllerDeleg
         fetchResultController.delegate = self
         return fetchResultController
     }()
-    
-    
-    
-    
     
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

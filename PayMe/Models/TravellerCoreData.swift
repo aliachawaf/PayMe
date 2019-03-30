@@ -7,14 +7,41 @@
 //
 import Foundation
 
+// MARK: -
+/**
+ Traveller type
+ 
+ **firstname**: Traveller -> String
+ **lastname**: Traveller -> String
+ **arrivalDate**: Traveller -> Date
+ **departureDate**: Traveller -> Date
+ **trip**: Traveller -> Trip
+ */
+
 extension Traveller {
     
-    public var arrivalDate: Date { return self.parrivalDate!}
-    public var departureDate: Date { return self.pdepartureDate!}
+    // MARK: -
+    
+    /// firstnale of Traveller
     public var firstname: String {return self.pfirstname ?? ""}
+    /// lastname of Traveller
     public var lastname: String {return self.plastname ?? ""}
+    /// arriaval Date to the trip of Traveller
+    public var arrivalDate: Date { return self.parrivalDate!}
+    /// departure Date to the trip of Traveller
+    public var departureDate: Date { return self.pdepartureDate!}
+    /// trip of Traveller
     public var trip: Trip {return self.ptrip!}
     
+    
+    /// initialize a 'Traveller'
+    ///
+    /// - Parameters:
+    ///   - firstname: <#firstname description#>
+    ///   - lastname: <#lastname description#>
+    ///   - arrival: <#arrival description#>
+    ///   - departure: <#departure description#>
+    ///   - trip: <#trip description#>
     convenience init(firstname: String, lastname: String, arrival: Date, departure: Date, trip:Trip) {
         self.init(context: CoreDataManager.context)
         self.pfirstname = firstname
@@ -24,6 +51,8 @@ extension Traveller {
         self.ptrip = trip
     }
     
+    
+    /// text description of a traveller
     func fullname() -> String {
         return self.firstname + " " + self.lastname
     }

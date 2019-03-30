@@ -10,20 +10,17 @@ import UIKit
 
 class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-
-    @IBOutlet weak var name: UITextField!
-    
     var newTrip: Trip?
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
     let imagePicker = UIImagePickerController()
     
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var iconName: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set images
         imagePicker.delegate = self
         self.imageView.image = #imageLiteral(resourceName: "addimage")
         self.iconName.image = #imageLiteral(resourceName: "trip")
@@ -33,12 +30,12 @@ class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
-        
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
-
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - ImagePickerControllerDelegate
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.contentMode = .scaleAspectFit
@@ -52,6 +49,9 @@ class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         dismiss(animated: true, completion: nil)
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - NavigationControllerDelegate
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -63,27 +63,30 @@ class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerCon
             } else {
                 self.newTrip = Trip(name: name, finished: false)
             }
-
+            
             self.dismiss(animated: true, completion: nil)
         }
+            
         else{
             self.newTrip = nil
             self.dismiss(animated: false, completion: nil)
-
         }
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        //hide keybord
+        // hide keybord
         textField.resignFirstResponder()
         
         if let text = textField.text{
             if text != ""{
                 textField.resignFirstResponder()
                 return true
-            } }
+            }
+        }
         return false
-        
     }
 }
