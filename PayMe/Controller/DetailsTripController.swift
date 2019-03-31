@@ -10,10 +10,11 @@ import UIKit
 
 class DetailsTripController: UIViewController {
     
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var nameTrip: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var travellersTableView: UITableView!
     @IBOutlet weak var finishedButton: UIBarButtonItem!
+    
     
     var trip: Trip?
     var travellersTV: TravellerTableViewController?
@@ -22,7 +23,7 @@ class DetailsTripController: UIViewController {
         super.viewDidLoad()
         
         // set trip name
-        self.name.text = trip?.name
+        self.nameTrip.text = trip?.name
         
         // set trip image
         if let dataImage = trip?.image {
@@ -53,6 +54,21 @@ class DetailsTripController: UIViewController {
         self.trip!.changeFinished()
         self.viewDidLoad()
     }
+    
+    /// called when trash button is clicked on
+    ///
+    /// - Parameter sender: trash button of the bottom navigation bar
+    @IBAction func deleteTrip(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Etes-vous sûr de vouloir supprimer ce voyage ?", message: "", preferredStyle: .alert)
+        
+        // TO DO DELETE TRIP WHEN CLICKS YES !!!!
+        alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
     
     //-------------------------------------------------------------------------------------------------
     // MARK: - Navigation

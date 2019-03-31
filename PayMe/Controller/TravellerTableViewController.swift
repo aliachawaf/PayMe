@@ -76,7 +76,7 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         
         // Configure the cell’s contents
         cell.textLabel!.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname()
-        
+
         return cell
     }
     
@@ -101,4 +101,5 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
             return String(n) + " Voyageur"
         }
     }
+    
 }

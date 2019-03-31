@@ -22,7 +22,6 @@ class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerCon
         
         // Set images
         imagePicker.delegate = self
-        self.imageView.image = #imageLiteral(resourceName: "addimage")
         self.iconName.image = #imageLiteral(resourceName: "trip")
     }
     
