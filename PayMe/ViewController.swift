@@ -34,18 +34,9 @@ class ViewController: UIViewController {
                 self.TableViewController.dataSetChanged()
                 
                 self.trip = trip
-                
-                if self.trip != nil {
-                    print(trip.name)
-                }
-                
                 performSegue(withIdentifier: "showTrip", sender: self)
             }
         }
-        
-     //   if let editTripController = sender.source as? EditTripController {
-       //     self.TableViewController.dataSetChanged()
-        //}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

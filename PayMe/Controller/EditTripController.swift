@@ -8,10 +8,10 @@
 
 import UIKit
 
-class EditTripController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditTripController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var trip: Trip?
-        let imagePicker = UIImagePickerController()
+    let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var nameTrip: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -27,15 +27,17 @@ class EditTripController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             self.imageView.image = #imageLiteral(resourceName: "addimage")
         }
+        
         imagePicker.delegate = self
     }
     
     @IBAction func handleTapImage(_ sender: Any) {
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
-
+    
+    
     //-------------------------------------------------------------------------------------------------
     // MARK: - ImagePickerControllerDelegate
     
@@ -61,9 +63,9 @@ class EditTripController: UIViewController, UIImagePickerControllerDelegate, UIN
         if segue.identifier == "okEditTrip" {
             
             self.trip?.updateTripInfos(newName: nameTrip.text!, newImage: (imageView.image?.jpegData(compressionQuality: 1))!)
+           
             CoreDataManager.save()
             self.dismiss(animated: true, completion: nil)
-            
         }
         else{
             self.dismiss(animated: false, completion: nil)

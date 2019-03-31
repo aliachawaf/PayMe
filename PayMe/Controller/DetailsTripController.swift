@@ -80,6 +80,13 @@ class DetailsTripController: UIViewController {
                 destController.trip = self.trip!
             }
         }
+        
+        if segue.identifier == "editTrip" {
+            
+            if let destController = segue.destination as? EditTripController {
+                destController.trip = trip
+            }
+        }
     }
     
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
@@ -88,6 +95,10 @@ class DetailsTripController: UIViewController {
             if let traveller = newTravellerController.newTraveller {
                 self.travellersTV!.travellerViewModel.add(traveller: traveller)
             }
+        }
+        
+        if sender.source is EditTripController {
+            self.viewDidLoad()
         }
     }
 }
