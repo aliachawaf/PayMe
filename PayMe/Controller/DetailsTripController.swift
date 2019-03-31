@@ -10,14 +10,15 @@ import UIKit
 
 class DetailsTripController: UIViewController {
     
-    @IBOutlet weak var nameTrip: UITextField!
+    @IBOutlet weak var nameTrip: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var travellersTableView: UITableView!
     @IBOutlet weak var finishedButton: UIBarButtonItem!
     
     
     var trip: Trip?
-    var travellersTV: TravellerTableViewController?
+    var travellersTV: TravellerTableViewController!
+    var travellerToEdit: Traveller?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class DetailsTripController: UIViewController {
         
         // set travellers data in the tableview
         self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
+        self.travellersTV.viewController = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +87,13 @@ class DetailsTripController: UIViewController {
             
             if let destController = segue.destination as? EditTripController {
                 destController.trip = trip
+            }
+        }
+        
+        if segue.identifier == "editTraveller" {
+            
+            if let destController = segue.destination as? EditTravellerController {
+                destController.traveller = self.travellerToEdit
             }
         }
     }

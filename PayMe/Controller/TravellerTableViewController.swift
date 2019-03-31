@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerViewModelDelegate {
+class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerViewModelDelegate, UITableViewDelegate {
     
     var travellerTV: UITableView!
     var trip: Trip
     var travellerViewModel: TravellerViewModel
+    var viewController: DetailsTripController?
     let fetchResultController : TravellerFetchResultsController
     
     init(tv: UITableView!, trip: Trip) {
@@ -25,6 +26,7 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         
         super.init()
         self.travellerTV.dataSource = self
+        self.travellerTV.delegate = self
         self.travellerViewModel.delegate = self
     }
     
@@ -102,4 +104,26 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         }
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Modifier") { action, index in
+            
+            self.viewController!.travellerToEdit = self.travellerViewModel.get(travellerAt: index.row)
+            
+            self.viewController!.performSegue(withIdentifier: "editTraveller", sender: nil)
+            
+        }
+        edit.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Supprimer") { action, index in
+            self.travellerViewModel.delete(tripAt: indexPath)
+        }
+        delete.backgroundColor = #colorLiteral(red: 1, green: 0.1982439173, blue: 0.2032906869, alpha: 1)
+        
+        return [delete, edit]
+    }
 }

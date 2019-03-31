@@ -90,6 +90,8 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         return true
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -100,7 +102,7 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         }
         edit.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         
-        let delete = UITableViewRowAction(style: .normal, title: "Supprimer") { action, index in
+        let delete = UITableViewRowAction(style: .destructive, title: "Supprimer") { action, index in
             self.tripViewModel.delete(tripAt: indexPath)
         }
         delete.backgroundColor = #colorLiteral(red: 1, green: 0.1982439173, blue: 0.2032906869, alpha: 1)

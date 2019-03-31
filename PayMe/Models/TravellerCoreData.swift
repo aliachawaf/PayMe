@@ -51,9 +51,23 @@ extension Traveller {
         self.ptrip = trip
     }
     
-    
     /// text description of a traveller
     func fullname() -> String {
         return self.firstname + " " + self.lastname
+    }
+    
+    /// Update infos of the Traveller
+    ///
+    /// - Parameters:
+    ///   - firstname: the new firstname to change to Traveller
+    ///   - lastname: the new lastname to change to Traveller
+    ///   - arrivalDate: the new arrivalDate to change to Traveller
+    ///   - departureDate: the new departureDate to change to Traveller
+    func updateTravellerInfos(firstname: String, lastname: String, arrivalDate: Date, departureDate: Date) {
+
+        self.pfirstname = firstname
+        self.plastname = lastname
+        self.parrivalDate = arrivalDate
+        self.pdepartureDate = departureDate
     }
 }

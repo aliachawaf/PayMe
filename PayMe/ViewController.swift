@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.TableViewController = TripTableViewController(tv: tripTableView)
         self.TableViewController.viewTripList = self
-        
     }
     
     //-------------------------------------------------------------------------------------------------
