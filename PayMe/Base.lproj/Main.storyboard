@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="wgq-hZ-vuG" kind="show" identifier="showTrip" id="dLw-ic-buG"/>
+                                            <segue destination="wgq-hZ-vuG" kind="show" identifier="showTrip" id="zqP-T6-6ki"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -64,6 +64,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tripTableView" destination="rGM-WM-MHP" id="hIj-Su-0Iy"/>
+                        <segue destination="Era-DH-SNe" kind="presentation" identifier="editTrip" id="LJC-0Y-CDq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -187,6 +188,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cdd-zO-bql"/>
                         <barButtonItem title="Modifier" id="2A7-00-Reo">
                             <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveMofications:" destination="wgq-hZ-vuG" id="2iA-NS-Tyt"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dPy-gc-Mk4"/>
                         <barButtonItem systemItem="trash" id="typ-gg-kHC">
@@ -684,6 +688,102 @@
             </objects>
             <point key="canvasLocation" x="512.79999999999995" y="1562.9685157421291"/>
         </scene>
+        <!--Edit Trip Controller-->
+        <scene sceneID="t1W-BE-BHs">
+            <objects>
+                <viewController id="Era-DH-SNe" customClass="EditTripController" customModule="PayMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ybo-rX-6hm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTx-2F-uG5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.093078874049999996" green="0.60111123320000004" blue="0.54533272980000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="MODIFIER VOYAGE" id="Vra-Xv-Nss"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrG-M6-FFF">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Annuler" id="Vlh-f3-Zbd">
+                                        <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="Fe3-bI-Ui6" kind="unwind" unwindAction="unwindToThisViewWithSender:" id="3pi-OD-LxN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PfY-Qf-U1i"/>
+                                    <barButtonItem title="Enregistrer" id="aEt-gY-lct">
+                                        <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="Fe3-bI-Ui6" kind="unwind" identifier="okEditTrip" unwindAction="unwindToThisViewWithSender:" id="2FG-Nq-zhU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.093078874049999996" green="0.60111123320000004" blue="0.54533272980000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8LX-pz-aWN">
+                                <rect key="frame" x="16" y="289" width="343" height="239"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="239" id="S5S-vc-nHW"/>
+                                    <constraint firstAttribute="width" constant="343" id="rBi-og-LWv"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Tqu-FZ-dod" appends="YES" id="9LV-ux-Gf1"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trip" translatesAutoresizingMaskIntoConstraints="NO" id="cHX-PL-4dN">
+                                <rect key="frame" x="16" y="111" width="75" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="sy2-OL-Lxg"/>
+                                    <constraint firstAttribute="width" constant="75" id="z8f-kF-WOt"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TEST EDIT" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdl-rB-1Kk">
+                                <rect key="frame" x="105" y="135" width="254" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MTx-2F-uG5" firstAttribute="leading" secondItem="Ybo-rX-6hm" secondAttribute="leading" id="0uD-ad-aya"/>
+                            <constraint firstItem="8LX-pz-aWN" firstAttribute="top" secondItem="cHX-PL-4dN" secondAttribute="bottom" constant="99" id="7Kf-n7-7TL"/>
+                            <constraint firstItem="cHX-PL-4dN" firstAttribute="top" secondItem="MTx-2F-uG5" secondAttribute="bottom" constant="47" id="9zO-k1-uak"/>
+                            <constraint firstItem="MTx-2F-uG5" firstAttribute="top" secondItem="Xw3-X5-4Xq" secondAttribute="top" id="Qbi-V3-FBo"/>
+                            <constraint firstItem="Xw3-X5-4Xq" firstAttribute="bottom" secondItem="KrG-M6-FFF" secondAttribute="bottom" id="T1f-Xy-di7"/>
+                            <constraint firstItem="tdl-rB-1Kk" firstAttribute="top" secondItem="MTx-2F-uG5" secondAttribute="bottom" constant="71" id="XWr-5P-GKG"/>
+                            <constraint firstItem="Xw3-X5-4Xq" firstAttribute="trailing" secondItem="tdl-rB-1Kk" secondAttribute="trailing" constant="16" id="Xio-zy-Y67"/>
+                            <constraint firstItem="tdl-rB-1Kk" firstAttribute="leading" secondItem="cHX-PL-4dN" secondAttribute="trailing" constant="14" id="fXj-E1-RBx"/>
+                            <constraint firstItem="Xw3-X5-4Xq" firstAttribute="trailing" secondItem="MTx-2F-uG5" secondAttribute="trailing" id="h3z-8v-Og2"/>
+                            <constraint firstItem="Xw3-X5-4Xq" firstAttribute="trailing" secondItem="8LX-pz-aWN" secondAttribute="trailing" constant="16" id="p0O-s8-Y7O"/>
+                            <constraint firstItem="8LX-pz-aWN" firstAttribute="leading" secondItem="Xw3-X5-4Xq" secondAttribute="leading" constant="16" id="ybb-no-5V9"/>
+                            <constraint firstItem="KrG-M6-FFF" firstAttribute="leading" secondItem="Xw3-X5-4Xq" secondAttribute="leading" id="zIU-oN-Kgh"/>
+                            <constraint firstItem="cHX-PL-4dN" firstAttribute="leading" secondItem="Xw3-X5-4Xq" secondAttribute="leading" constant="16" id="zrg-HO-6Yx"/>
+                            <constraint firstAttribute="trailing" secondItem="KrG-M6-FFF" secondAttribute="trailing" id="zvS-kf-0lT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xw3-X5-4Xq"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="8LX-pz-aWN" id="CYy-I1-N8J"/>
+                        <outlet property="nameTrip" destination="tdl-rB-1Kk" id="HcO-Mb-PRF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nyc-Dd-Vxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Fe3-bI-Ui6" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Tqu-FZ-dod">
+                    <connections>
+                        <action selector="handleTapImage:" destination="Era-DH-SNe" id="Zic-yC-rIi"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-452" y="1562.9685157421291"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qb8-Es-MmB">
             <objects>
@@ -719,7 +819,7 @@
         <image name="trip" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dLw-ic-buG"/>
+        <segue reference="zqP-T6-6ki"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.82969570118047054" green="0.87424651015228427" blue="0.86837709454968359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

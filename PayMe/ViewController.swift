@@ -12,12 +12,15 @@ class ViewController: UIViewController {
     
     var TableViewController: TripTableViewController!
     var trip: Trip?
+    var tripToEdit: Trip?
     
     @IBOutlet weak var tripTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.TableViewController = TripTableViewController(tv: tripTableView)
+        self.TableViewController.viewTripList = self
+        
     }
     
     //-------------------------------------------------------------------------------------------------
@@ -39,6 +42,10 @@ class ViewController: UIViewController {
                 performSegue(withIdentifier: "showTrip", sender: self)
             }
         }
+        
+     //   if let editTripController = sender.source as? EditTripController {
+       //     self.TableViewController.dataSetChanged()
+        //}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +61,13 @@ class ViewController: UIViewController {
                     destController.trip = self.trip
                     
                 }
+            }
+        }
+        
+        if segue.identifier == "editTrip" {
+            
+            if let destController = segue.destination as? EditTripController {
+                destController.trip = tripToEdit!
             }
         }
     }

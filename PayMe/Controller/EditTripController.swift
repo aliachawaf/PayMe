@@ -1,34 +1,41 @@
 //
-//  NewTripController.swift
+//  EditTripController.swift
 //  PayMe
 //
-//  Created by Alia Chawaf on 25/03/2019.
+//  Created by Alia Chawaf on 31/03/2019.
 //  Copyright © 2019 Chawaf Alia & Gestin Rémi. All rights reserved.
 //
 
 import UIKit
 
-class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditTripController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var newTrip: Trip?
-    let imagePicker = UIImagePickerController()
+    var trip: Trip?
+        let imagePicker = UIImagePickerController()
     
-    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var nameTrip: UITextField!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var iconName: UIImageView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        //set name TextField
+        self.nameTrip.text = trip?.name
+        
+        //set ImageView
+        if let dataImage = trip?.image {
+            self.imageView.image = UIImage(data: dataImage)
+        } else {
+            self.imageView.image = #imageLiteral(resourceName: "addimage")
+        }
         imagePicker.delegate = self
     }
     
     @IBAction func handleTapImage(_ sender: Any) {
-        
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
-    
+
     //-------------------------------------------------------------------------------------------------
     // MARK: - ImagePickerControllerDelegate
     
@@ -46,43 +53,37 @@ class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     }
     
     //-------------------------------------------------------------------------------------------------
-    // MARK: - NavigationControllerDelegate
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "okAddTrip" {
-            let name : String  = self.name.text!
+        if segue.identifier == "okEditTrip" {
             
-            if let imageData = imageView.image?.jpegData(compressionQuality: 1) {
-                self.newTrip = Trip(name: name, finished: false, image: imageData)
-            } else {
-                self.newTrip = Trip(name: name, finished: false)
-            }
-            
+            self.trip?.updateTripInfos(newName: nameTrip.text!, newImage: (imageView.image?.jpegData(compressionQuality: 1))!)
+            CoreDataManager.save()
             self.dismiss(animated: true, completion: nil)
-        }
             
+        }
         else{
-            self.newTrip = nil
             self.dismiss(animated: false, completion: nil)
         }
     }
+    
     
     //-------------------------------------------------------------------------------------------------
     // MARK: - TextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        // hide keybord
+        //hide keybord
         textField.resignFirstResponder()
         
         if let text = textField.text{
             if text != ""{
                 textField.resignFirstResponder()
                 return true
-            }
-        }
+            } }
         return false
     }
 }

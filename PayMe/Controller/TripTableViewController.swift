@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDelegate {
+class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDelegate, UITableViewDelegate {
     
     var tripTV: UITableView!
     var tripViewModel: TripViewModel
     let fetchResultController : TripFetchResultsController
+    var viewTripList : ViewController?
     
     init(tv: UITableView!) {
         
@@ -23,6 +24,7 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         
         super.init()
         self.tripTV.dataSource = self
+        self.tripTV.delegate = self
         self.tripViewModel.delegate = self
     }
     
@@ -88,9 +90,21 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Modifier") { action, index in
+            self.viewTripList!.tripToEdit = self.tripViewModel.get(tripAt: index.row)
+            self.viewTripList!.performSegue(withIdentifier: "editTrip", sender: nil)
+            
+        }
+        edit.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        
+        let delete = UITableViewRowAction(style: .normal, title: "Supprimer") { action, index in
             self.tripViewModel.delete(tripAt: indexPath)
         }
+        delete.backgroundColor = #colorLiteral(red: 1, green: 0.1982439173, blue: 0.2032906869, alpha: 1)
+        
+        return [delete, edit]
     }
 }

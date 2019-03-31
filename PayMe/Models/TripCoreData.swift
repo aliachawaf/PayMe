@@ -63,4 +63,14 @@ extension Trip {
     func isFinished() -> Bool {
         return self.pfinished
     }
+    
+    /// Update infos of the Trip
+    ///
+    /// - Parameters:
+    ///   - newName: String of the new name of the Trip
+    ///   - newImage: Data of the new image of the Trip
+    func updateTripInfos(newName: String, newImage: Data) {
+        self.pname = newName
+        self.pimage = newImage
+    }
 }

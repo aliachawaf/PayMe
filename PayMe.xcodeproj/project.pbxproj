@@ -30,6 +30,7 @@
 		419FF7D3224E615500F83996 /* TravellerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7D2224E615500F83996 /* TravellerTableViewController.swift */; };
 		419FF7D5224E648B00F83996 /* NewTravellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7D4224E648B00F83996 /* NewTravellerController.swift */; };
 		41A83C00224E15D600469D3E /* TravellerFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */; };
+		41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2ACD7225133F100487E9F /* EditTripController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		419FF7D2224E615500F83996 /* TravellerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerTableViewController.swift; sourceTree = "<group>"; };
 		419FF7D4224E648B00F83996 /* NewTravellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravellerController.swift; sourceTree = "<group>"; };
 		41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerFetchResultsController.swift; sourceTree = "<group>"; };
+		41C2ACD7225133F100487E9F /* EditTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				419FF7CE224E29DF00F83996 /* TripHistoryController.swift */,
 				419FF7D2224E615500F83996 /* TravellerTableViewController.swift */,
 				419FF7D4224E648B00F83996 /* NewTravellerController.swift */,
+				41C2ACD7225133F100487E9F /* EditTripController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				419FF7D1224E5A9300F83996 /* TravellerViewModel.swift in Sources */,
 				4131EF2422478DDD0077CD81 /* PayMe.xcdatamodeld in Sources */,
+				41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */,
 				4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */,
 				419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */,
 				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,

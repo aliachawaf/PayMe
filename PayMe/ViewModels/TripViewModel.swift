@@ -57,8 +57,8 @@ class TripViewModel {
         
             CoreDataManager.context.delete(tripsFetched.object(at: indexPath))
             self.delegate?.tripDeleted(at: indexPath)
-        
-        
     }
+    
+    
 }
 
