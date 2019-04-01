@@ -30,6 +30,10 @@
 		419FF7D3224E615500F83996 /* TravellerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7D2224E615500F83996 /* TravellerTableViewController.swift */; };
 		419FF7D5224E648B00F83996 /* NewTravellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419FF7D4224E648B00F83996 /* NewTravellerController.swift */; };
 		41A83C00224E15D600469D3E /* TravellerFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */; };
+		41AA38FB22526080003570B1 /* NewExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA38FA22526080003570B1 /* NewExpenseController.swift */; };
+		41AA38FD22526258003570B1 /* TravellerExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA38FC22526258003570B1 /* TravellerExpenseTableViewController.swift */; };
+		41AA38FF22526683003570B1 /* TravellerExpensePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA38FE22526683003570B1 /* TravellerExpensePickerViewController.swift */; };
+		41AA39012252787A003570B1 /* ExpenseCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA39002252787A003570B1 /* ExpenseCoreData.swift */; };
 		41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2ACD7225133F100487E9F /* EditTripController.swift */; };
 		41C2ACDA22516A9400487E9F /* EditTravellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2ACD922516A9400487E9F /* EditTravellerController.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +85,10 @@
 		419FF7D2224E615500F83996 /* TravellerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerTableViewController.swift; sourceTree = "<group>"; };
 		419FF7D4224E648B00F83996 /* NewTravellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravellerController.swift; sourceTree = "<group>"; };
 		41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerFetchResultsController.swift; sourceTree = "<group>"; };
+		41AA38FA22526080003570B1 /* NewExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseController.swift; sourceTree = "<group>"; };
+		41AA38FC22526258003570B1 /* TravellerExpenseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerExpenseTableViewController.swift; sourceTree = "<group>"; };
+		41AA38FE22526683003570B1 /* TravellerExpensePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerExpensePickerViewController.swift; sourceTree = "<group>"; };
+		41AA39002252787A003570B1 /* ExpenseCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCoreData.swift; sourceTree = "<group>"; };
 		41C2ACD7225133F100487E9F /* EditTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripController.swift; sourceTree = "<group>"; };
 		41C2ACD922516A9400487E9F /* EditTravellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravellerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,15 +178,13 @@
 		4195316B22494CC6005CC7AA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4195317C22495705005CC7AA /* NewTripController.swift */,
-				41953177224953A6005CC7AA /* TripTableViewController.swift */,
-				415C0E83224A2CCB00C41731 /* DetailsTripController.swift */,
-				419FF7C8224E1DC400F83996 /* TripHistoryTableViewController.swift */,
-				419FF7CE224E29DF00F83996 /* TripHistoryController.swift */,
-				419FF7D2224E615500F83996 /* TravellerTableViewController.swift */,
-				419FF7D4224E648B00F83996 /* NewTravellerController.swift */,
-				41C2ACD7225133F100487E9F /* EditTripController.swift */,
-				41C2ACD922516A9400487E9F /* EditTravellerController.swift */,
+				41AA390A22527B5C003570B1 /* EditTraveller */,
+				41AA390922527B56003570B1 /* EditTrip */,
+				41AA390722527AE2003570B1 /* NewTraveller */,
+				41AA390622527ACD003570B1 /* NewExpense */,
+				41AA390422527A98003570B1 /* HistoryTrip */,
+				41AA3903225278FB003570B1 /* DetailsTrip */,
+				41AA3902225278D2003570B1 /* NewTrip */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				4195317322495182005CC7AA /* TripCoreData.swift */,
+				41AA39002252787A003570B1 /* ExpenseCoreData.swift */,
 				419FF7CC224E26B900F83996 /* TravellerCoreData.swift */,
 			);
 			path = Models;
@@ -209,6 +216,67 @@
 				419FF7D0224E5A9300F83996 /* TravellerViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		41AA3902225278D2003570B1 /* NewTrip */ = {
+			isa = PBXGroup;
+			children = (
+				4195317C22495705005CC7AA /* NewTripController.swift */,
+			);
+			path = NewTrip;
+			sourceTree = "<group>";
+		};
+		41AA3903225278FB003570B1 /* DetailsTrip */ = {
+			isa = PBXGroup;
+			children = (
+				415C0E83224A2CCB00C41731 /* DetailsTripController.swift */,
+				419FF7D2224E615500F83996 /* TravellerTableViewController.swift */,
+				41953177224953A6005CC7AA /* TripTableViewController.swift */,
+			);
+			path = DetailsTrip;
+			sourceTree = "<group>";
+		};
+		41AA390422527A98003570B1 /* HistoryTrip */ = {
+			isa = PBXGroup;
+			children = (
+				419FF7C8224E1DC400F83996 /* TripHistoryTableViewController.swift */,
+				419FF7CE224E29DF00F83996 /* TripHistoryController.swift */,
+			);
+			path = HistoryTrip;
+			sourceTree = "<group>";
+		};
+		41AA390622527ACD003570B1 /* NewExpense */ = {
+			isa = PBXGroup;
+			children = (
+				41AA38FC22526258003570B1 /* TravellerExpenseTableViewController.swift */,
+				41AA38FE22526683003570B1 /* TravellerExpensePickerViewController.swift */,
+				41AA38FA22526080003570B1 /* NewExpenseController.swift */,
+			);
+			path = NewExpense;
+			sourceTree = "<group>";
+		};
+		41AA390722527AE2003570B1 /* NewTraveller */ = {
+			isa = PBXGroup;
+			children = (
+				419FF7D4224E648B00F83996 /* NewTravellerController.swift */,
+			);
+			path = NewTraveller;
+			sourceTree = "<group>";
+		};
+		41AA390922527B56003570B1 /* EditTrip */ = {
+			isa = PBXGroup;
+			children = (
+				41C2ACD7225133F100487E9F /* EditTripController.swift */,
+			);
+			path = EditTrip;
+			sourceTree = "<group>";
+		};
+		41AA390A22527B5C003570B1 /* EditTraveller */ = {
+			isa = PBXGroup;
+			children = (
+				41C2ACD922516A9400487E9F /* EditTravellerController.swift */,
+			);
+			path = EditTraveller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,10 +413,14 @@
 				419FF7D1224E5A9300F83996 /* TravellerViewModel.swift in Sources */,
 				4131EF2422478DDD0077CD81 /* PayMe.xcdatamodeld in Sources */,
 				41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */,
+				41AA39012252787A003570B1 /* ExpenseCoreData.swift in Sources */,
 				4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */,
+				41AA38FD22526258003570B1 /* TravellerExpenseTableViewController.swift in Sources */,
 				419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */,
 				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,
 				419FF7CD224E26B900F83996 /* TravellerCoreData.swift in Sources */,
+				41AA38FB22526080003570B1 /* NewExpenseController.swift in Sources */,
+				41AA38FF22526683003570B1 /* TravellerExpensePickerViewController.swift in Sources */,
 				41C2ACDA22516A9400487E9F /* EditTravellerController.swift in Sources */,
 				4195317422495182005CC7AA /* TripCoreData.swift in Sources */,
 				4195317B22495478005CC7AA /* TripViewModel.swift in Sources */,
@@ -537,7 +609,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AZ5CJR4GGF;
 				INFOPLIST_FILE = PayMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,7 +627,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AZ5CJR4GGF;
 				INFOPLIST_FILE = PayMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -57,21 +57,6 @@ class DetailsTripController: UIViewController {
         self.viewDidLoad()
     }
     
-    /// called when trash button is clicked on
-    ///
-    /// - Parameter sender: trash button of the bottom navigation bar
-    @IBAction func deleteTrip(_ sender: Any) {
-        
-        let alert = UIAlertController(title: "Etes-vous sûr de vouloir supprimer ce voyage ?", message: "", preferredStyle: .alert)
-        
-        // TO DO DELETE TRIP WHEN CLICKS YES !!!!
-        alert.addAction(UIAlertAction(title: "Oui", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true)
-    }
-    
-    
     //-------------------------------------------------------------------------------------------------
     // MARK: - Navigation
     
@@ -94,6 +79,13 @@ class DetailsTripController: UIViewController {
             
             if let destController = segue.destination as? EditTravellerController {
                 destController.traveller = self.travellerToEdit
+            }
+        }
+        
+        if segue.identifier == "addExpense" {
+            
+            if let destController = segue.destination as? NewExpenseController {
+                destController.trip = trip
             }
         }
     }

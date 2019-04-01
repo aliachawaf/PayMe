@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18E205e" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
+        <attribute name="pdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pimage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pexpensetraveller" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseTraveller" inverseName="pexpense" inverseEntity="ExpenseTraveller" syncable="YES"/>
+    </entity>
+    <entity name="ExpenseTraveller" representedClassName="ExpenseTraveller" syncable="YES" codeGenerationType="class">
+        <attribute name="pamount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pcreator" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pexpense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="pexpensetraveller" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="ptraveller" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Traveller" inverseName="pexpense" inverseEntity="Traveller" syncable="YES"/>
+    </entity>
     <entity name="Traveller" representedClassName="Traveller" syncable="YES" codeGenerationType="class">
         <attribute name="parrivalDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pdepartureDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pfirstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plastname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pexpense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseTraveller" inverseName="ptraveller" inverseEntity="ExpenseTraveller" syncable="YES"/>
         <relationship name="ptrip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="ptravellers" inverseEntity="Trip" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
@@ -14,7 +26,9 @@
         <relationship name="ptravellers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Traveller" inverseName="ptrip" inverseEntity="Traveller" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Traveller" positionX="-104.86328125" positionY="2904.29296875" width="128" height="120"/>
-        <element name="Trip" positionX="-392.53125" positionY="2980.31640625" width="128" height="105"/>
+        <element name="Traveller" positionX="-104.86328125" positionY="2904.29296875" width="128" height="133"/>
+        <element name="Trip" positionX="-489.66796875" positionY="2919.3984375" width="128" height="105"/>
+        <element name="Expense" positionX="-338.1875" positionY="3093.2578125" width="128" height="88"/>
+        <element name="ExpenseTraveller" positionX="-62.40234375" positionY="3070.890625" width="128" height="103"/>
     </elements>
 </model>

@@ -11,7 +11,7 @@ import CoreData
 
 class TravellerFetchResultsController: NSObject, NSFetchedResultsControllerDelegate {
     
-    let tableView: UITableView
+    var tableView: UITableView!
     var trip: Trip
     
     init(view: UITableView, trip: Trip) {
@@ -21,6 +21,17 @@ class TravellerFetchResultsController: NSObject, NSFetchedResultsControllerDeleg
         do {
             try self.travellersFetched.performFetch()
             
+        }
+        catch let error as NSError {
+            fatalError(error.description)
+        }
+    }
+    
+    init (trip: Trip) {
+        self.trip = trip
+        super.init()
+        do {
+            try self.travellersFetched.performFetch()
         }
         catch let error as NSError {
             fatalError(error.description)
