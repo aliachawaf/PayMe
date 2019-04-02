@@ -16,6 +16,8 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
     var viewController: DetailsTripController?
     let fetchResultController : TravellerFetchResultsController
     
+    var travellersConcerned: [Traveller] = []
+    
     init(tv: UITableView!, trip: Trip) {
         
         self.travellerTV = tv
@@ -51,6 +53,7 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         
         cell.accessoryType = .checkmark
         cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        self.travellersConcerned.append(self.travellerViewModel.get(travellerAt: indexPath.row)!)
         
         return cell
     }
@@ -60,16 +63,22 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         tableView.deselectRow(at: indexPath, animated: true)
         
         if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            
+            let currentTraveller: Traveller = self.travellerViewModel.get(travellerAt: indexPath.row)!
+            
             if cell.accessoryType == .checkmark{
                 cell.accessoryType = .none
+                
+               
+                let index: Int = self.travellersConcerned.lastIndex(of: currentTraveller)!
+                self.travellersConcerned.remove(at: index)
             }
             else{
                 cell.accessoryType = .checkmark
                 cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+                self.travellersConcerned.append(currentTraveller)
             }
         }
-        
+        print("\(self.travellersConcerned)")
     }
-    
-    
 }
