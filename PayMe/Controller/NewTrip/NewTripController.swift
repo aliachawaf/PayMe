@@ -20,6 +20,7 @@ class NewTripController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        name.delegate = self
     }
     
     @IBAction func handleTapImage(_ sender: Any) {

@@ -15,6 +15,9 @@
 		4131EF2922478DDE0077CD81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4131EF2722478DDE0077CD81 /* LaunchScreen.storyboard */; };
 		4131EF3422478DDE0077CD81 /* PayMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3322478DDE0077CD81 /* PayMeTests.swift */; };
 		4131EF3F22478DDE0077CD81 /* PayMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */; };
+		4159025222538D58001B8CCA /* TravellersCreatorTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4159025122538D58001B8CCA /* TravellersCreatorTVController.swift */; };
+		4159025822538FA6001B8CCA /* CellTravellersCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4159025722538FA6001B8CCA /* CellTravellersCreator.swift */; };
+		4159025B2253A3CA001B8CCA /* MyTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4159025A2253A3CA001B8CCA /* MyTextFieldDelegate.swift */; };
 		415C0E84224A2CCB00C41731 /* DetailsTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C0E83224A2CCB00C41731 /* DetailsTripController.swift */; };
 		4195316D22494CF3005CC7AA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195316C22494CF3005CC7AA /* CoreDataManager.swift */; };
 		4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4195316F22494E78005CC7AA /* TripFetchResultsController.swift */; };
@@ -32,7 +35,6 @@
 		41A83C00224E15D600469D3E /* TravellerFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */; };
 		41AA38FB22526080003570B1 /* NewExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA38FA22526080003570B1 /* NewExpenseController.swift */; };
 		41AA38FD22526258003570B1 /* TravellerExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA38FC22526258003570B1 /* TravellerExpenseTableViewController.swift */; };
-		41AA38FF22526683003570B1 /* TravellerExpensePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA38FE22526683003570B1 /* TravellerExpensePickerViewController.swift */; };
 		41AA39012252787A003570B1 /* ExpenseCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA39002252787A003570B1 /* ExpenseCoreData.swift */; };
 		41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2ACD7225133F100487E9F /* EditTripController.swift */; };
 		41C2ACDA22516A9400487E9F /* EditTravellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2ACD922516A9400487E9F /* EditTravellerController.swift */; };
@@ -70,6 +72,9 @@
 		4131EF3A22478DDE0077CD81 /* PayMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4131EF3E22478DDE0077CD81 /* PayMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMeUITests.swift; sourceTree = "<group>"; };
 		4131EF4022478DDE0077CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4159025122538D58001B8CCA /* TravellersCreatorTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersCreatorTVController.swift; sourceTree = "<group>"; };
+		4159025722538FA6001B8CCA /* CellTravellersCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTravellersCreator.swift; sourceTree = "<group>"; };
+		4159025A2253A3CA001B8CCA /* MyTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextFieldDelegate.swift; sourceTree = "<group>"; };
 		415C0E83224A2CCB00C41731 /* DetailsTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTripController.swift; sourceTree = "<group>"; };
 		4195316C22494CF3005CC7AA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4195316F22494E78005CC7AA /* TripFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFetchResultsController.swift; sourceTree = "<group>"; };
@@ -87,7 +92,6 @@
 		41A83BFF224E15D600469D3E /* TravellerFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerFetchResultsController.swift; sourceTree = "<group>"; };
 		41AA38FA22526080003570B1 /* NewExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseController.swift; sourceTree = "<group>"; };
 		41AA38FC22526258003570B1 /* TravellerExpenseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerExpenseTableViewController.swift; sourceTree = "<group>"; };
-		41AA38FE22526683003570B1 /* TravellerExpensePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerExpensePickerViewController.swift; sourceTree = "<group>"; };
 		41AA39002252787A003570B1 /* ExpenseCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCoreData.swift; sourceTree = "<group>"; };
 		41C2ACD7225133F100487E9F /* EditTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripController.swift; sourceTree = "<group>"; };
 		41C2ACD922516A9400487E9F /* EditTravellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravellerController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 		4131EF1A22478DDD0077CD81 /* PayMe */ = {
 			isa = PBXGroup;
 			children = (
+				415902592253A395001B8CCA /* Delegate */,
 				4195317922495449005CC7AA /* ViewModels */,
 				4195317222495163005CC7AA /* Models */,
 				4195316E22494E42005CC7AA /* FetchResultsControllers */,
@@ -173,6 +178,14 @@
 				4131EF4022478DDE0077CD81 /* Info.plist */,
 			);
 			path = PayMeUITests;
+			sourceTree = "<group>";
+		};
+		415902592253A395001B8CCA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				4159025A2253A3CA001B8CCA /* MyTextFieldDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		4195316B22494CC6005CC7AA /* Controller */ = {
@@ -249,8 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				41AA38FC22526258003570B1 /* TravellerExpenseTableViewController.swift */,
-				41AA38FE22526683003570B1 /* TravellerExpensePickerViewController.swift */,
 				41AA38FA22526080003570B1 /* NewExpenseController.swift */,
+				4159025122538D58001B8CCA /* TravellersCreatorTVController.swift */,
+				4159025722538FA6001B8CCA /* CellTravellersCreator.swift */,
 			);
 			path = NewExpense;
 			sourceTree = "<group>";
@@ -416,12 +430,14 @@
 				41AA39012252787A003570B1 /* ExpenseCoreData.swift in Sources */,
 				4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */,
 				41AA38FD22526258003570B1 /* TravellerExpenseTableViewController.swift in Sources */,
+				4159025822538FA6001B8CCA /* CellTravellersCreator.swift in Sources */,
 				419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */,
 				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,
 				419FF7CD224E26B900F83996 /* TravellerCoreData.swift in Sources */,
 				41AA38FB22526080003570B1 /* NewExpenseController.swift in Sources */,
-				41AA38FF22526683003570B1 /* TravellerExpensePickerViewController.swift in Sources */,
 				41C2ACDA22516A9400487E9F /* EditTravellerController.swift in Sources */,
+				4159025B2253A3CA001B8CCA /* MyTextFieldDelegate.swift in Sources */,
+				4159025222538D58001B8CCA /* TravellersCreatorTVController.swift in Sources */,
 				4195317422495182005CC7AA /* TripCoreData.swift in Sources */,
 				4195317B22495478005CC7AA /* TripViewModel.swift in Sources */,
 				419FF7D5224E648B00F83996 /* NewTravellerController.swift in Sources */,

@@ -11,19 +11,22 @@ import UIKit
 class NewExpenseController: UIViewController {
     
     
+    @IBOutlet weak var travellersCreatorsTV: UITableView!
     
-    @IBOutlet weak var travellerPV: UIPickerView!
     @IBOutlet weak var travellerTV: UITableView!
     
-    var travellerPVController: TravellerExpensePickerViewController!
     var travellerTVController: TravellerExpenseTableViewController!
+    var travellersCreatorTVController: TravellersCreatorTVController!
     var trip: Trip?
     
     
     override func viewDidLoad() {
-        self.travellerPVController = TravellerExpensePickerViewController(pv: travellerPV, trip: trip!)
         
+            self.travellersCreatorTVController = TravellersCreatorTVController(tv: travellersCreatorsTV, trip: trip!)
+        self.travellersCreatorTVController.viewController = self
+
         self.travellerTVController = TravellerExpenseTableViewController(tv: travellerTV, trip: trip!)
+    
         
     }
     

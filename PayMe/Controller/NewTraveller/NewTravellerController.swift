@@ -20,6 +20,8 @@ class NewTravellerController: UIViewController, UITextFieldDelegate, UINavigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstname.delegate = self
+        lastname.delegate = self
     }
     
     //-------------------------------------------------------------------------------------------------

@@ -28,6 +28,7 @@ extension Trip {
     /// image of Trip
     public var image: Data? {return self.pimage}
     
+    
     /// initialiez a 'Trip'
     ///
     /// - Parameters:
@@ -63,6 +64,8 @@ extension Trip {
     func isFinished() -> Bool {
         return self.pfinished
     }
+    
+    
     
     /// Update infos of the Trip
     ///

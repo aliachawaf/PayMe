@@ -56,6 +56,10 @@ extension Traveller {
         return self.firstname + " " + self.lastname
     }
     
+    func addExpense(expense: Expense) {
+        
+    }
+    
     /// Update infos of the Traveller
     ///
     /// - Parameters:
