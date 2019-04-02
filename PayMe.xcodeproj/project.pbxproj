@@ -38,6 +38,7 @@
 		41AA39012252787A003570B1 /* ExpenseCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AA39002252787A003570B1 /* ExpenseCoreData.swift */; };
 		41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2ACD7225133F100487E9F /* EditTripController.swift */; };
 		41C2ACDA22516A9400487E9F /* EditTravellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2ACD922516A9400487E9F /* EditTravellerController.swift */; };
+		41DCC9152253FE4E00EFC1A9 /* TravellersConcernedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9142253FE4E00EFC1A9 /* TravellersConcernedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		41AA39002252787A003570B1 /* ExpenseCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCoreData.swift; sourceTree = "<group>"; };
 		41C2ACD7225133F100487E9F /* EditTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripController.swift; sourceTree = "<group>"; };
 		41C2ACD922516A9400487E9F /* EditTravellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTravellerController.swift; sourceTree = "<group>"; };
+		41DCC9142253FE4E00EFC1A9 /* TravellersConcernedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersConcernedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		4131EF1A22478DDD0077CD81 /* PayMe */ = {
 			isa = PBXGroup;
 			children = (
+				41DCC9132253FE1D00EFC1A9 /* Cell */,
 				415902592253A395001B8CCA /* Delegate */,
 				4195317922495449005CC7AA /* ViewModels */,
 				4195317222495163005CC7AA /* Models */,
@@ -264,7 +267,6 @@
 				41AA38FC22526258003570B1 /* TravellerExpenseTableViewController.swift */,
 				41AA38FA22526080003570B1 /* NewExpenseController.swift */,
 				4159025122538D58001B8CCA /* TravellersCreatorTVController.swift */,
-				4159025722538FA6001B8CCA /* CellTravellersCreator.swift */,
 			);
 			path = NewExpense;
 			sourceTree = "<group>";
@@ -291,6 +293,15 @@
 				41C2ACD922516A9400487E9F /* EditTravellerController.swift */,
 			);
 			path = EditTraveller;
+			sourceTree = "<group>";
+		};
+		41DCC9132253FE1D00EFC1A9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				41DCC9142253FE4E00EFC1A9 /* TravellersConcernedCell.swift */,
+				4159025722538FA6001B8CCA /* CellTravellersCreator.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +440,7 @@
 				41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */,
 				41AA39012252787A003570B1 /* ExpenseCoreData.swift in Sources */,
 				4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */,
+				41DCC9152253FE4E00EFC1A9 /* TravellersConcernedCell.swift in Sources */,
 				41AA38FD22526258003570B1 /* TravellerExpenseTableViewController.swift in Sources */,
 				4159025822538FA6001B8CCA /* CellTravellersCreator.swift in Sources */,
 				419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */,

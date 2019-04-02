@@ -77,7 +77,7 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
         
         // Configure the cell’s contents
-        cell.textLabel!.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname()
+        cell.textLabel!.text = (self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname())! + " " + String(self.travellerViewModel.get(travellerAt: indexPath.row)!.balance)
 
         return cell
     }

@@ -33,6 +33,18 @@ extension Traveller {
     /// trip of Traveller
     public var trip: Trip {return self.ptrip!}
     
+    public var balance: Double {
+        
+        var balance = 0.0
+        
+        let tab: [ExpenseTraveller] = self.pexpensetraveller!.allObjects as! [ExpenseTraveller]
+        for e in tab {
+            balance = balance + e.pamountCreator
+            balance = balance - e.pamoutDebt
+        }
+        return balance
+    }
+    
     
     /// initialize a 'Traveller'
     ///

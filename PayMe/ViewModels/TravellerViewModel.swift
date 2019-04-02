@@ -46,6 +46,12 @@ class TravellerViewModel {
         return self.travellersFetched.object(at: IndexPath(row: index, section: 0))
     }
     
+    func getAll() -> [Traveller]? {
+        
+        return self.travellersFetched.fetchedObjects
+        
+    }
+    
     
     public func add(traveller: Traveller){
         

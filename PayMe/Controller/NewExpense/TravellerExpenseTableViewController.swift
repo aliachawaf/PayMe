@@ -8,21 +8,22 @@
 
 import UIKit
 
-class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate {
+class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     var travellerTV: UITableView!
     var trip: Trip
     var travellerViewModel: TravellerViewModel
     var viewController: NewExpenseController?
     let fetchResultController : TravellerFetchResultsController
+    var amountConcerned: [Double] = []
     
-    var travellersConcerned: [Traveller] = []
+    var nbTravellersConcerned: Int = 0
     
     init(tv: UITableView!, trip: Trip) {
         
         self.travellerTV = tv
         self.trip = trip
-        self.fetchResultController = TravellerFetchResultsController(trip: self.trip)
+        self.fetchResultController = TravellerFetchResultsController(view: travellerTV, trip: trip)
         self.travellerViewModel = TravellerViewModel(data: self.fetchResultController.travellersFetched)
         
         super.init()
@@ -46,9 +47,12 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Fetch a cell of the appropriate type.
-        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
+        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath) as! TravellersConcernedCell
+        
         // Configure the cell’s contents
-        cell.textLabel!.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname()
+        cell.nametraveller.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname()
+        cell.amount.placeholder = "0"
+        cell.amount.delegate = self
         
         cell.accessoryType = .checkmark
         cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
@@ -57,14 +61,9 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         backgroundView.backgroundColor = #colorLiteral(red: 0.9750393033, green: 0.8889251947, blue: 0.6913807392, alpha: 1)
         cell.selectedBackgroundView = backgroundView
         
-        self.travellersConcerned.append(self.travellerViewModel.get(travellerAt: indexPath.row)!)
+        self.nbTravellersConcerned = self.nbTravellersConcerned + 1
+        self.amountConcerned.append(0.0)
         
-      //  let indexTravellerCreator = self.viewController?.travellerPV.selectedRow(inComponent: 0)
-     /*
-        if indexPath.row == indexTravellerCreator {
-            cell.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-        }
-       */
         return cell
     }
 
@@ -72,29 +71,55 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath as IndexPath) as! TravellersConcernedCell
             
           //  let indexTravellerCreator = self.viewController?.travellerPV.selectedRow(inComponent: 0)
             
           //  if (indexPath.row != indexTravellerCreator) {
             
-                let currentTraveller: Traveller = self.travellerViewModel.get(travellerAt: indexPath.row)!
+            cell.amount.placeholder = "0.0"
                 
                 if cell.accessoryType == .checkmark{
                     cell.accessoryType = .none
-                   
-                    let index: Int = self.travellersConcerned.lastIndex(of: currentTraveller)!
-                    self.travellersConcerned.remove(at: index)
+                    self.nbTravellersConcerned = nbTravellersConcerned - 1
+                    cell.amount.text = ""
+                    cell.amount.isEnabled = false
+                    updateRepartition()
                 }
                 else{
                     cell.accessoryType = .checkmark
                     cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
-                    self.travellersConcerned.append(currentTraveller)
+                    cell.amount.isEnabled = true
+                    self.nbTravellersConcerned = nbTravellersConcerned + 1
+                    updateRepartition()
+                    
                 }
-          /*  } else {
-                cell.accessoryType = .checkmark
-                cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
-            }*/
+    }
+    
+    func updateRepartition() {
+        let totalAmount = Double(self.viewController!.totalAmount.text!)!
+        var cpt = 0
+        for cell in self.travellerTV.visibleCells as! [TravellersConcernedCell]{
+            if cell.accessoryType == .checkmark {
+                
+                cell.amount.text = String(totalAmount/Double(self.nbTravellersConcerned))
+                self.amountConcerned[cpt] = totalAmount/Double(self.nbTravellersConcerned)
+            }
+            else {
+                self.amountConcerned[cpt] = 0.0
+            }
+           cpt = cpt + 1
         }
+        
+        print(self.amountConcerned)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // hide keybord
+        textField.resignFirstResponder()
+        
+        
+        return true
     }
 }

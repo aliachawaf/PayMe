@@ -14,6 +14,7 @@ extension Expense {
     public var name: String {return self.pname ?? ""}
     public var date: Date? {return self.pdate}
     
+    /*
     public var travellerCreator: Traveller {
         
         let tab:  [ExpenseTraveller] = self.pexpensetraveller?.allObjects as! [ExpenseTraveller]
@@ -44,48 +45,38 @@ extension Expense {
         
         return results
     }
-    
+    */
     public var amount: Double {
     
         let tab:  [ExpenseTraveller] = self.pexpensetraveller?.allObjects as! [ExpenseTraveller]
     
-        var result: Double?
+        var result = 0.0
     
         for t in tab {
-            if (t.pcreator) {
-                result = t.pamount
-            }
+            result = result + t.pamountCreator
         }
     
-        return result!
+        return result
     
     }
     
-    convenience init(name: String, image: Data, date: Date, amount: Double, travellerCreator: Traveller, travellersConcerned: [Traveller]) {
+    
+    convenience init(name: String, image: Data, date: Date, travellers: [Traveller], amountCreator: [Double], amountDept: [Double]) {
         self.init(context: CoreDataManager.context)
         self.pname = name
         self.pimage = image
         self.pdate = date
         
-        for t in travellersConcerned {
+        
+        for i in 0 ..< travellers.count{
             let tmp: ExpenseTraveller = ExpenseTraveller(context: CoreDataManager.context)
             
-            tmp.pamount = amount / Double(travellersConcerned.count)
-            tmp.ptraveller = t
-            tmp.pcreator = false
+            tmp.pamountCreator = amountCreator[i]
+            tmp.pamoutDebt = amountDept[i]
+            tmp.ptraveller = travellers[i]
             
-            t.addToPexpensetraveller(tmp)
+            travellers[i].addToPexpensetraveller(tmp)
             self.addToPexpensetraveller(tmp)
         }
-        
-        let tmpCreator: ExpenseTraveller = ExpenseTraveller(context: CoreDataManager.context)
-        
-        tmpCreator.pamount = amount
-        tmpCreator.ptraveller = travellerCreator
-        tmpCreator.pcreator = true
-        
-        travellerCreator.addToPexpensetraveller(tmpCreator)
-        self.addToPexpensetraveller(tmpCreator)
-        
     }
 }

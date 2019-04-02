@@ -17,19 +17,15 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
     var travellerViewModel: TravellerViewModel
     var viewController: NewExpenseController?
     let fetchResultController : TravellerFetchResultsController
-    var textFieldDelegate: MyTextFieldDelegate
     
-    
-    var travellersCreator: [Traveller] = []
-    var tabAmount: [Double] = []
+    var tabAmountCreator: [Double] = []
     
     init(tv: UITableView!, trip: Trip) {
         
         self.travellerTV = tv
         self.trip = trip
-        self.fetchResultController = TravellerFetchResultsController(trip: self.trip)
+        self.fetchResultController = TravellerFetchResultsController(view: travellerTV, trip: self.trip)
         self.travellerViewModel = TravellerViewModel(data: self.fetchResultController.travellersFetched)
-        self.textFieldDelegate = MyTextFieldDelegate()
         super.init()
         self.travellerTV.dataSource = self
         self.travellerTV.delegate = self
@@ -57,8 +53,7 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
         cell!.amount.tag = indexPath.row
         cell!.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        
-       // let indexTravellerCreator = self.viewController?.travellerPV.selectedRow(inComponent: 0)
+        self.tabAmountCreator.append(0.0)
         
         return cell!
     }
@@ -75,44 +70,24 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
     func textFieldDidEndEditing(_ textField: UITextField) {
         let index = IndexPath(row: textField.tag, section: 0)
         let cell = travellerTV.cellForRow(at: index) as? CellTravellersCreator
-        let currentTraveller = self.travellerViewModel.get(travellerAt: index.row)!
+        
         
         if textField.text == "0" || textField.text == "" {
             cell?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            if self.travellersCreator.contains(currentTraveller) {
-                let indexTraveller = self.travellersCreator.lastIndex(of: currentTraveller)!
-                self.travellersCreator.remove(at: indexTraveller)
-                self.tabAmount.remove(at: indexTraveller)
-                textField.text = ""
-            }
-            
+            textField.placeholder = "0"
+            textField.text = ""
             
         } else {
             cell?.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.9316896746, blue: 0.7069338469, alpha: 1)
-            
-            if self.travellersCreator.contains(currentTraveller) {
-                let indexTraveller = self.travellersCreator.lastIndex(of: currentTraveller)!
-                self.tabAmount[indexTraveller] = Double(textField.text!) ?? self.tabAmount[indexTraveller]
-                textField.text = String(self.tabAmount[indexTraveller])
-            } else {
-                if let amount = Double(textField.text!) {
-                    self.travellersCreator.append(currentTraveller)
-                    self.tabAmount.append(amount)
-                    textField.text = String(amount)
-                    updateTravellersConcernedTV(at: index, isCreator: true)
-                }
-                else {
-                    textField.text = ""
-                    textField.placeholder = "0"
-                    cell?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                }
-            }
         }
         
+        self.tabAmountCreator[index.row] = Double(textField.text!) ?? 0.0
+        self.viewController!.totalAmount.text = String(tabAmountCreator.reduce(0, +))
+        self.viewController!.travellerTVController.updateRepartition()
         
-        self.viewController!.totalAmount.text = String(tabAmount.reduce(0, +)) + " €"
+        print(self.tabAmountCreator)
     }
-    
+    /*
     func updateTravellersConcernedTV (at indexPath: IndexPath, isCreator: Bool) {
         
         let cell = self.viewController!.travellerConcernedTV.cellForRow(at: indexPath)!
@@ -122,15 +97,21 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
             cell.accessoryType = .none
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.isUserInteractionEnabled = false
+            let currentTraveller = self.travellerViewModel.get(travellerAt: indexPath.row)!
+            self.viewController!.travellerTVController.travellersConcerned.append(currentTraveller)
             
+        } else {
+            cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            cell.selectionStyle = UITableViewCell.SelectionStyle.default
+            cell.isUserInteractionEnabled = true
         }
+ 
         
         
-        
-    }
+    }*/
     
     
-    
+}
     
    
-}
+

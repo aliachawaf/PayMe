@@ -26,17 +26,7 @@ class TravellerFetchResultsController: NSObject, NSFetchedResultsControllerDeleg
             fatalError(error.description)
         }
     }
-    
-    init (trip: Trip) {
-        self.trip = trip
-        super.init()
-        do {
-            try self.travellersFetched.performFetch()
-        }
-        catch let error as NSError {
-            fatalError(error.description)
-        }
-    }
+
     
     //-------------------------------------------------------------------------------------------------
     // MARK: - FetchResultController

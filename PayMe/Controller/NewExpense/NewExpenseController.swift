@@ -15,12 +15,16 @@ class NewExpenseController: UIViewController {
     
     @IBOutlet weak var travellerConcernedTV: UITableView!
     
+    @IBOutlet weak var nameExpense: UITextField!
+    @IBOutlet weak var imageExpense: UIImageView!
     
+    @IBOutlet weak var dateExpense: UIDatePicker!
     @IBOutlet weak var totalAmount: UILabel!
     var travellerTVController: TravellerExpenseTableViewController!
     var travellersCreatorTVController: TravellersCreatorTVController!
-    var trip: Trip?
     
+    var trip: Trip?
+    var  newExpense: Expense?
     
     override func viewDidLoad() {
         
@@ -28,7 +32,8 @@ class NewExpenseController: UIViewController {
         self.travellersCreatorTVController.viewController = self
 
         self.travellerTVController = TravellerExpenseTableViewController(tv: travellerConcernedTV, trip: trip!)
-    
+        self.travellerTVController.viewController = self
+        
         
     }
     
@@ -36,7 +41,21 @@ class NewExpenseController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "okAddExpense" {
             
-        } else {
+            let name = self.nameExpense.text!
+            let imageData = self.imageExpense.image!.jpegData(compressionQuality: 1)!
+            let date: Date = self.dateExpense.date
+            
+            let travellers = self.travellerTVController.travellerViewModel.getAll()!
+            let amountCreator = self.travellersCreatorTVController.tabAmountCreator
+            let amountConcerned = self.travellerTVController.amountConcerned
+            
+            self.newExpense = Expense(name: name, image: imageData, date: date, travellers: travellers, amountCreator: amountCreator, amountDept: amountConcerned)
+            
+            print("\(self.newExpense)")
+            
+        }
+        else {
+            
             
         }
     }
