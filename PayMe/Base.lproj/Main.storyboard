@@ -278,21 +278,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-5B-r8h">
-                                                    <rect key="frame" x="15" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traveller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-5B-r8h">
+                                                    <rect key="frame" x="15" y="11" width="65" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMb-yr-Lpx">
-                                                    <rect key="frame" x="128" y="6" width="97" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMb-yr-Lpx">
+                                                    <rect key="frame" x="243" y="6" width="63" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="63" id="dG2-XB-1az"/>
+                                                    </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYe-Iu-Mqi">
+                                                    <rect key="frame" x="307" y="11" width="11" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gMb-yr-Lpx" firstAttribute="top" secondItem="jc0-Aq-8tu" secondAttribute="top" constant="6" id="DBM-1f-FaS"/>
+                                                <constraint firstItem="aYe-Iu-Mqi" firstAttribute="top" secondItem="jc0-Aq-8tu" secondAttribute="topMargin" id="Eq1-s7-HCq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aYe-Iu-Mqi" secondAttribute="trailing" constant="10" id="Qos-Zc-1f0"/>
+                                                <constraint firstItem="ZH2-5B-r8h" firstAttribute="top" secondItem="jc0-Aq-8tu" secondAttribute="topMargin" id="VjY-8w-A2c"/>
+                                                <constraint firstItem="ZH2-5B-r8h" firstAttribute="leading" secondItem="jc0-Aq-8tu" secondAttribute="leadingMargin" id="b4d-sc-vYr"/>
+                                                <constraint firstItem="aYe-Iu-Mqi" firstAttribute="leading" secondItem="gMb-yr-Lpx" secondAttribute="trailing" constant="1" id="bab-zz-fTy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amount" destination="gMb-yr-Lpx" id="evf-cO-Ogz"/>
@@ -341,8 +356,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttp-bj-GaZ">
-                                <rect key="frame" x="136" y="186" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttp-bj-GaZ">
+                                <rect key="frame" x="136" y="186" width="25.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -392,11 +407,13 @@
                             <constraint firstItem="13K-Is-CuW" firstAttribute="leading" secondItem="fHe-2t-ya8" secondAttribute="leading" constant="16" id="ftM-Y4-nBe"/>
                             <constraint firstAttribute="trailing" secondItem="Xwy-b6-CfM" secondAttribute="trailing" id="lUe-VT-8fd"/>
                             <constraint firstItem="RRL-PP-cRb" firstAttribute="centerX" secondItem="aN4-Fw-PEc" secondAttribute="centerX" id="mdC-4f-pnK"/>
+                            <constraint firstItem="ttp-bj-GaZ" firstAttribute="leading" secondItem="13K-Is-CuW" secondAttribute="trailing" constant="8" id="sAJ-lZ-HC4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fHe-2t-ya8"/>
                     </view>
                     <connections>
-                        <outlet property="travellerTV" destination="ivX-0c-RpJ" id="HdB-eQ-zFR"/>
+                        <outlet property="totalAmount" destination="ttp-bj-GaZ" id="iKg-Ce-Bxb"/>
+                        <outlet property="travellerConcernedTV" destination="ivX-0c-RpJ" id="Kyv-xV-blV"/>
                         <outlet property="travellersCreatorsTV" destination="RRL-PP-cRb" id="Y4L-xm-hUd"/>
                     </connections>
                 </viewController>

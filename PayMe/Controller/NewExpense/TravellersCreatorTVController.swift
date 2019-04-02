@@ -99,19 +99,32 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
                     self.travellersCreator.append(currentTraveller)
                     self.tabAmount.append(amount)
                     textField.text = String(amount)
+                    updateTravellersConcernedTV(at: index, isCreator: true)
                 }
                 else {
                     textField.text = ""
                     textField.placeholder = "0"
                     cell?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 }
-                
             }
         }
-        print(tabAmount.reduce(0, +))
-        print("\(self.travellersCreator)")
-        print(self.tabAmount)
-
+        
+        
+        self.viewController!.totalAmount.text = String(tabAmount.reduce(0, +)) + " €"
+    }
+    
+    func updateTravellersConcernedTV (at indexPath: IndexPath, isCreator: Bool) {
+        
+        let cell = self.viewController!.travellerConcernedTV.cellForRow(at: indexPath)!
+        
+        if (isCreator) {
+            cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            cell.accessoryType = .none
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.isUserInteractionEnabled = false
+            
+        }
+        
         
         
     }

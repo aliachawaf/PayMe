@@ -13,8 +13,10 @@ class NewExpenseController: UIViewController {
     
     @IBOutlet weak var travellersCreatorsTV: UITableView!
     
-    @IBOutlet weak var travellerTV: UITableView!
+    @IBOutlet weak var travellerConcernedTV: UITableView!
     
+    
+    @IBOutlet weak var totalAmount: UILabel!
     var travellerTVController: TravellerExpenseTableViewController!
     var travellersCreatorTVController: TravellersCreatorTVController!
     var trip: Trip?
@@ -22,10 +24,10 @@ class NewExpenseController: UIViewController {
     
     override func viewDidLoad() {
         
-            self.travellersCreatorTVController = TravellersCreatorTVController(tv: travellersCreatorsTV, trip: trip!)
+        self.travellersCreatorTVController = TravellersCreatorTVController(tv: travellersCreatorsTV, trip: trip!)
         self.travellersCreatorTVController.viewController = self
 
-        self.travellerTVController = TravellerExpenseTableViewController(tv: travellerTV, trip: trip!)
+        self.travellerTVController = TravellerExpenseTableViewController(tv: travellerConcernedTV, trip: trip!)
     
         
     }

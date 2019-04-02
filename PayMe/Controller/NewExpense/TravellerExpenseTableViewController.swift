@@ -52,6 +52,11 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         
         cell.accessoryType = .checkmark
         cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = #colorLiteral(red: 0.9750393033, green: 0.8889251947, blue: 0.6913807392, alpha: 1)
+        cell.selectedBackgroundView = backgroundView
+        
         self.travellersConcerned.append(self.travellerViewModel.get(travellerAt: indexPath.row)!)
         
       //  let indexTravellerCreator = self.viewController?.travellerPV.selectedRow(inComponent: 0)
