@@ -87,29 +87,16 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
         
         print(self.tabAmountCreator)
     }
-    /*
-    func updateTravellersConcernedTV (at indexPath: IndexPath, isCreator: Bool) {
-        
-        let cell = self.viewController!.travellerConcernedTV.cellForRow(at: indexPath)!
-        
-        if (isCreator) {
-            cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-            cell.accessoryType = .none
-            cell.selectionStyle = UITableViewCell.SelectionStyle.none
-            cell.isUserInteractionEnabled = false
-            let currentTraveller = self.travellerViewModel.get(travellerAt: indexPath.row)!
-            self.viewController!.travellerTVController.travellersConcerned.append(currentTraveller)
-            
-        } else {
-            cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            cell.selectionStyle = UITableViewCell.SelectionStyle.default
-            cell.isUserInteractionEnabled = true
-        }
- 
-        
-        
-    }*/
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "Dépensier(s)"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        view.tintColor = #colorLiteral(red: 0.7509321217, green: 0.8862745166, blue: 0.8517355244, alpha: 1)
+    }
     
 }
     

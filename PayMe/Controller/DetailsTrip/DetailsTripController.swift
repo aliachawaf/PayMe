@@ -88,6 +88,15 @@ class DetailsTripController: UIViewController {
                 destController.trip = trip
             }
         }
+        
+        if segue.identifier == "showExpenses"{
+            if let destController = segue.destination as? ListExpenseViewController {
+                
+                    destController.trip = self.trip
+                    
+                }
+            }
+        
     }
     
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {

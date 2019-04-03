@@ -28,6 +28,22 @@ extension Trip {
     /// image of Trip
     public var image: Data? {return self.pimage}
     
+    public var totalAmount: Double? {
+        let tabTraveller:  [Traveller] = self.ptravellers?.allObjects as! [Traveller]
+    
+        var result = 0.0
+        
+        for t in tabTraveller {
+            let expenseTab: [ExpenseTraveller] = t.pexpensetraveller!.allObjects as! [ExpenseTraveller]
+            for e in expenseTab {
+                result = result + e.pamountCreator
+            }
+        }
+        
+        return result
+        
+    }
+    
     
     /// initialiez a 'Trip'
     ///

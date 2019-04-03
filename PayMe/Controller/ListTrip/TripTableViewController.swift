@@ -75,7 +75,7 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         let cell = tripTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
         
         // Configure the cell’s contents
-        cell.textLabel!.text = self.tripViewModel.get(tripAt: indexPath.row)?.name
+        cell.textLabel!.text = (self.tripViewModel.get(tripAt: indexPath.row)?.name)! + " " + String(self.tripViewModel.get(tripAt: indexPath.row)!.totalAmount!)
         
         if let dataImage = self.tripViewModel.get(tripAt: indexPath.row)?.image {
             cell.imageView?.image = UIImage(data: dataImage)

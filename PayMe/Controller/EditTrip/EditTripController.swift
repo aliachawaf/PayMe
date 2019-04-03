@@ -20,6 +20,7 @@ class EditTripController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         //set name TextField
         self.nameTrip.text = trip?.name
+        self.nameTrip.delegate = self
         
         //set ImageView
         if let dataImage = trip?.image {

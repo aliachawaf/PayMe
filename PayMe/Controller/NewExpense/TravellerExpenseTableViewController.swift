@@ -58,7 +58,7 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
         
         let backgroundView = UIView()
-        backgroundView.backgroundColor = #colorLiteral(red: 0.9750393033, green: 0.8889251947, blue: 0.6913807392, alpha: 1)
+        backgroundView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.9316896746, blue: 0.7069338469, alpha: 1)
         cell.selectedBackgroundView = backgroundView
         
         self.nbTravellersConcerned = self.nbTravellersConcerned + 1
@@ -69,13 +69,10 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
 
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cell = tableView.cellForRow(at: indexPath as IndexPath) as! TravellersConcernedCell
-            
-          //  let indexTravellerCreator = self.viewController?.travellerPV.selectedRow(inComponent: 0)
-            
-          //  if (indexPath.row != indexTravellerCreator) {
             
             cell.amount.placeholder = "0.0"
                 
@@ -96,8 +93,13 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
                 }
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return "Concerné(s)"
+    }
+    
     func updateRepartition() {
-        let totalAmount = Double(self.viewController!.totalAmount.text!)!
+        let totalAmount = Double(self.viewController!.totalAmount.text!) ?? 0.0
         var cpt = 0
         for cell in self.travellerTV.visibleCells as! [TravellersConcernedCell]{
             if cell.accessoryType == .checkmark {
@@ -122,4 +124,10 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         
         return true
     }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        view.tintColor = #colorLiteral(red: 0.7509321217, green: 0.8862745166, blue: 0.8517355244, alpha: 1)
+    }
 }
+
