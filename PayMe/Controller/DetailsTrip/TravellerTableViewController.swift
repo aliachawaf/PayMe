@@ -109,6 +109,11 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        view.tintColor = #colorLiteral(red: 0.7509321217, green: 0.8862745166, blue: 0.8517355244, alpha: 1)
+    }
+    
     //-------------------------------------------------------------------------------------------------
     // MARK: - UITableViewDelegate
 

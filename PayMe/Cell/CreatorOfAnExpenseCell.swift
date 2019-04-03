@@ -16,7 +16,10 @@ class CreatorOfAnExpenseCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.amount.layer.cornerRadius = 8
+        self.amount.layer.masksToBounds = true
+        self.amount.textAlignment = .center
+        self.amount.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.9316896746, blue: 0.7069338469, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

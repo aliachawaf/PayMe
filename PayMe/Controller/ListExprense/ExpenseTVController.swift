@@ -83,9 +83,18 @@ class ExpenseTVController: NSObject, UITableViewDataSource, ExpenseViewModelDele
         cell.textLabel!.text = self.expenseViewModel.get(expenseAt: indexPath.row)?.name
         cell.amount.text = String(self.expenseViewModel.get(expenseAt: indexPath.row)!.amount) + " €"
         
+        
         if (self.expenseViewModel.get(expenseAt: indexPath.row)!.isRefund) {
             cell.backgroundColor = #colorLiteral(red: 0.8137492069, green: 0.8137492069, blue: 0.8137492069, alpha: 1)
         }
+        
+        
+        if let dataImage = self.expenseViewModel.get(expenseAt: indexPath.row)?.image {
+            cell.imageView?.image = UIImage(data: dataImage)
+        } else {
+            cell.imageView?.image = #imageLiteral(resourceName: "addimage")
+        }
+        
         
         cell.selectionStyle = .none
         

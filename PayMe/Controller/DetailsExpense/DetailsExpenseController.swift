@@ -31,6 +31,10 @@ class DetailsExpenseController: UIViewController {
             self.imageView.image = UIImage(data: dataImage)
         }
         
+        self.date.text = "Date : " + self.expense!.date!.description
+        
+        self.amount.text = "Montant : " + String(self.expense!.amount) + " €"
+        
         self.creatorsTVController = CreatorsOfExpenseTVController(tv: creatorsTV, expense: self.expense!)
         self.concernedTVController = ConcernedTVController(tv: concernedTV, expense: self.expense!)
         

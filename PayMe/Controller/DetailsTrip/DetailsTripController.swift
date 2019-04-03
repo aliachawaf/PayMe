@@ -107,6 +107,16 @@ class DetailsTripController: UIViewController {
             }
         }
         
+        if segue.identifier == "showTraveller"{
+            if let destController = segue.destination as? DetailsTravellerController {
+                
+                if let cell = sender as? UITableViewCell {
+                    guard let index = self.travellersTableView.indexPath(for: cell) else {return}
+                    destController.traveller = self.travellersTV.travellerViewModel.get(travellerAt: index.row)
+                    
+                }
+            }
+        }
     }
     
     @IBAction func unwindToThisView(sender: UIStoryboardSegue) {
@@ -120,5 +130,7 @@ class DetailsTripController: UIViewController {
         if sender.source is EditTripController {
             self.viewDidLoad()
         }
+        
+        
     }
 }

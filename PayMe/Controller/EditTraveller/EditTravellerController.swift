@@ -22,6 +22,9 @@ class EditTravellerController: UIViewController, UITextFieldDelegate {
         lastname.text = self.traveller?.lastname
         arrivalDate.date = (self.traveller?.arrivalDate)!
         departureDate.date = (self.traveller?.departureDate)!
+        
+        self.firstname.delegate = self
+        self.lastname.delegate = self
     }
     
     

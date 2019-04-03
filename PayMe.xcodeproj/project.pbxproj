@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		410217C022552CB500E3FD50 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410217BF22552CB500E3FD50 /* ExpenseCell.swift */; };
+		410217C422554ED500E3FD50 /* DetailsTravellerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410217C322554ED500E3FD50 /* DetailsTravellerController.swift */; };
 		4131EF1C22478DDD0077CD81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF1B22478DDD0077CD81 /* AppDelegate.swift */; };
 		4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4131EF1D22478DDD0077CD81 /* ViewController.swift */; };
 		4131EF2122478DDD0077CD81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4131EF1F22478DDD0077CD81 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		410217BF22552CB500E3FD50 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
+		410217C322554ED500E3FD50 /* DetailsTravellerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTravellerController.swift; sourceTree = "<group>"; };
 		4131EF1822478DDD0077CD81 /* PayMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4131EF1B22478DDD0077CD81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4131EF1D22478DDD0077CD81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410217C222554EA300E3FD50 /* DetailsTraveller */ = {
+			isa = PBXGroup;
+			children = (
+				410217C322554ED500E3FD50 /* DetailsTravellerController.swift */,
+			);
+			path = DetailsTraveller;
+			sourceTree = "<group>";
+		};
 		4131EF0F22478DDD0077CD81 = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +239,7 @@
 		4195316B22494CC6005CC7AA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				410217C222554EA300E3FD50 /* DetailsTraveller */,
 				41DCC93B2254FF9300EFC1A9 /* Balance */,
 				41DCC92A2254DB1C00EFC1A9 /* DetailsExpense */,
 				41DCC91D22549E9800EFC1A9 /* ListExprense */,
@@ -545,6 +556,7 @@
 				4159025B2253A3CA001B8CCA /* MyTextFieldDelegate.swift in Sources */,
 				41DCC9412255041500EFC1A9 /* Refund.swift in Sources */,
 				4159025222538D58001B8CCA /* TravellersCreatorTVController.swift in Sources */,
+				410217C422554ED500E3FD50 /* DetailsTravellerController.swift in Sources */,
 				41DCC9432255067600EFC1A9 /* RefundTVController.swift in Sources */,
 				4195317422495182005CC7AA /* TripCoreData.swift in Sources */,
 				41DCC94522551A3300EFC1A9 /* RefundInBalanceCell.swift in Sources */,
