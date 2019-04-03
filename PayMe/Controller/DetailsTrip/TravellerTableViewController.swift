@@ -74,11 +74,21 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Fetch a cell of the appropriate type.
-        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
+        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath) as! TravellerTripCell
         
         // Configure the cell’s contents
-        cell.textLabel!.text = (self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname())! + " " + String(self.travellerViewModel.get(travellerAt: indexPath.row)!.balance)
+        cell.textLabel!.text = (self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname())!
 
+        let balance = self.travellerViewModel.get(travellerAt: indexPath.row)!.balance
+        
+        cell.balance.text = String(balance) + " €" 
+        
+        if balance < 0 {
+            cell.balance.backgroundColor = #colorLiteral(red: 1, green: 0.4033368393, blue: 0.4369280409, alpha: 1)
+        } else {
+            cell.balance.backgroundColor = #colorLiteral(red: 0.6474267826, green: 1, blue: 0.6095485427, alpha: 1)
+        }
+        
         return cell
     }
     

@@ -1,25 +1,22 @@
 //
-//  CellTravellersCreator.swift
+//  TravellerTripCell.swift
 //  PayMe
 //
-//  Created by Alia Chawaf on 02/04/2019.
+//  Created by Alia Chawaf on 03/04/2019.
 //  Copyright © 2019 Chawaf Alia & Gestin Rémi. All rights reserved.
 //
 
 import UIKit
 
-class CellTravellersCreator: UITableViewCell {
+class TravellerTripCell: UITableViewCell {
 
-    
-    @IBOutlet weak var amount: UITextField!
-    
-    @IBOutlet weak var nametraveller: UILabel!
-    
+    @IBOutlet weak var balance: UILabel!
     override func awakeFromNib() {
-
         super.awakeFromNib()
-       
-        // Initialization code
+        
+        self.balance.layer.cornerRadius = 8
+        self.balance.layer.masksToBounds = true
+        self.balance.textAlignment = .center
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,7 +24,5 @@ class CellTravellersCreator: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-
 
 }

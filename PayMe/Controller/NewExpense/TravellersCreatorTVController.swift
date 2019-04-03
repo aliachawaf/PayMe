@@ -42,7 +42,7 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Fetch a cell of the appropriate type.
-        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellType", for: indexPath) as? CellTravellersCreator
+        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellType", for: indexPath) as? TravellersCreatorCell
         
         // Configure the cell’s contents
         cell!.nametraveller.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname()
@@ -69,7 +69,7 @@ class TravellersCreatorTVController: NSObject, UITableViewDataSource, UITableVie
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         let index = IndexPath(row: textField.tag, section: 0)
-        let cell = travellerTV.cellForRow(at: index) as? CellTravellersCreator
+        let cell = travellerTV.cellForRow(at: index) as? TravellersCreatorCell
         
         
         if textField.text == "0" || textField.text == "" {
