@@ -16,6 +16,7 @@ class RefundInBalanceCell: UITableViewCell {
     @IBAction func handleRefund(_ sender: Any) {
         
         Expense(refund: refund!)
+        self.refundTVController!.travellerTV.reloadData()
     }
     
     

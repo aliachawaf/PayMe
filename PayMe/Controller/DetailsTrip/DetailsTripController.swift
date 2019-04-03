@@ -44,7 +44,7 @@ class DetailsTripController: UIViewController {
         self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
         self.travellersTV.viewController = self
         
-        self.totalAmountTrip.text = String(self.trip!.totalAmount!)
+        self.totalAmountTrip.text = String(self.trip!.totalAmount!) + " €"
     }
     
     override func viewWillAppear(_ animated: Bool) {

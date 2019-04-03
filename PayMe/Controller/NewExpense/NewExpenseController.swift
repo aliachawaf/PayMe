@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewExpenseController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewExpenseController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     @IBOutlet weak var travellersCreatorsTV: UITableView!
@@ -46,6 +46,8 @@ class NewExpenseController: UIViewController, UIImagePickerControllerDelegate, U
         self.travellerTVController.viewController = self
         
         imagePicker.delegate = self
+        
+        self.nameExpense.delegate = self
     }
     
     //-------------------------------------------------------------------------------------------------
@@ -86,5 +88,15 @@ class NewExpenseController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("test delegate")
+        
+        // hide keybord
+        textField.resignFirstResponder()
+        
+        return true
     }
 }
