@@ -53,6 +53,8 @@
 		41DCC93A2254FF2300EFC1A9 /* TravellerBalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9392254FF2300EFC1A9 /* TravellerBalanceCell.swift */; };
 		41DCC93D2254FFA900EFC1A9 /* BalanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC93C2254FFA900EFC1A9 /* BalanceController.swift */; };
 		41DCC93F2254FFC900EFC1A9 /* TravellersBalanceTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC93E2254FFC900EFC1A9 /* TravellersBalanceTVController.swift */; };
+		41DCC9412255041500EFC1A9 /* Refund.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9402255041500EFC1A9 /* Refund.swift */; };
+		41DCC9432255067600EFC1A9 /* RefundTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9422255067600EFC1A9 /* RefundTVController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		41DCC9392254FF2300EFC1A9 /* TravellerBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerBalanceCell.swift; sourceTree = "<group>"; };
 		41DCC93C2254FFA900EFC1A9 /* BalanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceController.swift; sourceTree = "<group>"; };
 		41DCC93E2254FFC900EFC1A9 /* TravellersBalanceTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersBalanceTVController.swift; sourceTree = "<group>"; };
+		41DCC9402255041500EFC1A9 /* Refund.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refund.swift; sourceTree = "<group>"; };
+		41DCC9422255067600EFC1A9 /* RefundTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundTVController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 				4195317322495182005CC7AA /* TripCoreData.swift */,
 				41AA39002252787A003570B1 /* ExpenseCoreData.swift */,
 				419FF7CC224E26B900F83996 /* TravellerCoreData.swift */,
+				41DCC9402255041500EFC1A9 /* Refund.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			children = (
 				41DCC93C2254FFA900EFC1A9 /* BalanceController.swift */,
 				41DCC93E2254FFC900EFC1A9 /* TravellersBalanceTVController.swift */,
+				41DCC9422255067600EFC1A9 /* RefundTVController.swift */,
 			);
 			path = Balance;
 			sourceTree = "<group>";
@@ -530,7 +536,9 @@
 				41AA38FB22526080003570B1 /* NewExpenseController.swift in Sources */,
 				41C2ACDA22516A9400487E9F /* EditTravellerController.swift in Sources */,
 				4159025B2253A3CA001B8CCA /* MyTextFieldDelegate.swift in Sources */,
+				41DCC9412255041500EFC1A9 /* Refund.swift in Sources */,
 				4159025222538D58001B8CCA /* TravellersCreatorTVController.swift in Sources */,
+				41DCC9432255067600EFC1A9 /* RefundTVController.swift in Sources */,
 				4195317422495182005CC7AA /* TripCoreData.swift in Sources */,
 				4195317B22495478005CC7AA /* TripViewModel.swift in Sources */,
 				41DCC9322254E01D00EFC1A9 /* ConcernedByAnExpenseCell.swift in Sources */,

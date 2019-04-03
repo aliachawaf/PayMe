@@ -97,4 +97,24 @@ extension Expense {
             self.addToPexpensetraveller(tmp)
         }
     }
+    
+    convenience init(refund: Refund ) {
+        self.init(context: CoreDataManager.context)
+        self.pname = "Remboursement de " + refund.travellerInDebt.fullname() + " vers " + refund.travellerToRefund.fullname()
+        self.pimage = UIImage(named: "refund")?.jpegData(compressionQuality: 1)
+        self.pdate = Date()
+        
+        print(self.pdate)
+        
+        for i in 0 ..< travellers.count{
+            let tmp: ExpenseTraveller = ExpenseTraveller(context: CoreDataManager.context)
+            
+            tmp.pamountCreator = amountCreator[i]
+            tmp.pamoutDebt = amountDebt[i]
+            tmp.ptraveller = travellers[i]
+            
+            travellers[i].addToPexpensetraveller(tmp)
+            self.addToPexpensetraveller(tmp)
+        }
+    }
 }

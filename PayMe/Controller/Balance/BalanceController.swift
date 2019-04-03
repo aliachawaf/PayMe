@@ -13,14 +13,19 @@ class BalanceController: UIViewController {
  
     @IBOutlet weak var travellersTableView: UITableView!
     
+    @IBOutlet weak var refundTableView: UITableView!
+    
     var trip: Trip?
-    var travellersTV: TravellersBalanceTVController!
+    var travellersTVController: TravellersBalanceTVController!
+    var refundTVController: RefundTVController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // set travellers data in the tableview
-        self.travellersTV = TravellersBalanceTVController(tv: travellersTableView, trip: self.trip!)
+        self.travellersTVController = TravellersBalanceTVController(tv: travellersTableView, trip: self.trip!)
+     
+        self.refundTVController = RefundTVController(tv: refundTableView, trip: self.trip!)
     }
 
 }
