@@ -77,10 +77,17 @@ class ExpenseTVController: NSObject, UITableViewDataSource, ExpenseViewModelDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Fetch a cell of the appropriate type.
-        let cell = expenseTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
+        let cell = expenseTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath) as! ExpenseCell
         
         // Configure the cell’s contents
         cell.textLabel!.text = self.expenseViewModel.get(expenseAt: indexPath.row)?.name
+        cell.amount.text = String(self.expenseViewModel.get(expenseAt: indexPath.row)!.amount) + " €"
+        
+        if (self.expenseViewModel.get(expenseAt: indexPath.row)!.isRefund) {
+            cell.backgroundColor = #colorLiteral(red: 0.8137492069, green: 0.8137492069, blue: 0.8137492069, alpha: 1)
+        }
+        
+        cell.selectionStyle = .none
         
         return cell
     }

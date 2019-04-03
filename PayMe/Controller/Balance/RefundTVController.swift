@@ -15,6 +15,7 @@ class RefundTVController: NSObject, UITableViewDataSource, UITableViewDelegate {
     var travellerViewModel: TravellerViewModel
     let fetchResultController : TravellerFetchResultsController
     
+    
     init(tv: UITableView!, trip: Trip) {
         
         self.travellerTV = tv
@@ -27,7 +28,7 @@ class RefundTVController: NSObject, UITableViewDataSource, UITableViewDelegate {
         self.travellerTV.delegate = self
     }
     
-    lazy var refunds: [Refund] = {
+    func getRefunds() -> [Refund] {
         
         var results: [Refund] = []
         
@@ -85,7 +86,7 @@ class RefundTVController: NSObject, UITableViewDataSource, UITableViewDelegate {
         }
         
         return results
-    }()
+    }
     
     //-------------------------------------------------------------------------------------------------
     // MARK: - TableViewDataSource
@@ -95,7 +96,7 @@ class RefundTVController: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return refunds.count
+        return getRefunds().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,10 +104,12 @@ class RefundTVController: NSObject, UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         // Fetch a cell of the appropriate type.
-        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellBalance", for: indexPath)
+        let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellBalance", for: indexPath) as! RefundInBalanceCell
         
         // Configure the cell’s contents
-        cell.textLabel!.text = self.refunds[indexPath.row].refundDescription()
+        cell.textLabel!.text = self.getRefunds()[indexPath.row].refundDescription()
+        cell.refund = self.getRefunds()[indexPath.row]
+        cell.refundTVController = self
         
         return cell
     }

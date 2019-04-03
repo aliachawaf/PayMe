@@ -42,8 +42,8 @@ class TravellersBalanceTVController: NSObject, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        tableView.deselectRow(at: indexPath, animated: true)
-
+        tableView.allowsSelection = false
+        
         // Fetch a cell of the appropriate type.
         let cell = travellerTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath) as! TravellerBalanceCell
         

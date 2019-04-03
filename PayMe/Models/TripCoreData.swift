@@ -36,7 +36,9 @@ extension Trip {
         for t in tabTraveller {
             let expenseTab: [ExpenseTraveller] = t.pexpensetraveller!.allObjects as! [ExpenseTraveller]
             for e in expenseTab {
+                if !e.pexpense!.isRefund {
                 result = result + e.pamountCreator
+                }
             }
         }
         

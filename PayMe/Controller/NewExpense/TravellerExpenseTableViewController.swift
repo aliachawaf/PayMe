@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     var travellerTV: UITableView!
     var trip: Trip
@@ -51,8 +51,6 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         
         // Configure the cell’s contents
         cell.nametraveller.text = self.travellerViewModel.get(travellerAt: indexPath.row)?.fullname()
-        cell.amount.placeholder = "0"
-        cell.amount.delegate = self
         
         cell.accessoryType = .checkmark
         cell.tintColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
@@ -73,9 +71,7 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cell = tableView.cellForRow(at: indexPath as IndexPath) as! TravellersConcernedCell
-            
-            cell.amount.placeholder = "0.0"
-                
+        
                 if cell.accessoryType == .checkmark{
                     cell.accessoryType = .none
                     self.nbTravellersConcerned = nbTravellersConcerned - 1
@@ -104,7 +100,7 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
         for cell in self.travellerTV.visibleCells as! [TravellersConcernedCell]{
             if cell.accessoryType == .checkmark {
                 
-                cell.amount.text = String(totalAmount/Double(self.nbTravellersConcerned))
+                cell.amount.text = String(totalAmount/Double(self.nbTravellersConcerned)) + " €"
                 self.amountConcerned[cpt] = totalAmount/Double(self.nbTravellersConcerned)
             }
             else {
@@ -112,18 +108,8 @@ class TravellerExpenseTableViewController: NSObject, UITableViewDataSource, UITa
             }
            cpt = cpt + 1
         }
-        
-        print(self.amountConcerned)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        // hide keybord
-        textField.resignFirstResponder()
-        
-        
-        return true
-    }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         

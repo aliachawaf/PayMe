@@ -3,6 +3,7 @@
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
         <attribute name="pdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="pisRefund" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pexpensetraveller" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ExpenseTraveller" inverseName="pexpense" inverseEntity="ExpenseTraveller" syncable="YES"/>
     </entity>
@@ -27,7 +28,7 @@
         <relationship name="ptravellers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Traveller" inverseName="ptrip" inverseEntity="Traveller" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Expense" positionX="-338.1875" positionY="3093.2578125" width="128" height="103"/>
+        <element name="Expense" positionX="-338.1875" positionY="3093.2578125" width="128" height="118"/>
         <element name="ExpenseTraveller" positionX="-62.40234375" positionY="3070.890625" width="128" height="105"/>
         <element name="Traveller" positionX="-104.86328125" positionY="2904.29296875" width="128" height="133"/>
         <element name="Trip" positionX="-489.66796875" positionY="2919.3984375" width="128" height="105"/>

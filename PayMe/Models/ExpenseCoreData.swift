@@ -13,7 +13,7 @@ extension Expense {
     public var image: Data? {return self.pimage}
     public var name: String {return self.pname ?? ""}
     public var date: Date? {return self.pdate}
-    
+    public var isRefund: Bool {return self.pisRefund}
  
     
     public var travellers: [Traveller] {
@@ -84,6 +84,7 @@ extension Expense {
         self.pname = name
         self.pimage = image
         self.pdate = date
+        self.pisRefund = false
         
         
         for i in 0 ..< travellers.count{
@@ -103,18 +104,24 @@ extension Expense {
         self.pname = "Remboursement de " + refund.travellerInDebt.fullname() + " vers " + refund.travellerToRefund.fullname()
         self.pimage = UIImage(named: "refund")?.jpegData(compressionQuality: 1)
         self.pdate = Date()
+        self.pisRefund = true
+       
         
-        print(self.pdate)
+        let etToRefund: ExpenseTraveller = ExpenseTraveller(context: CoreDataManager.context)
         
-        for i in 0 ..< travellers.count{
-            let tmp: ExpenseTraveller = ExpenseTraveller(context: CoreDataManager.context)
-            
-            tmp.pamountCreator = amountCreator[i]
-            tmp.pamoutDebt = amountDebt[i]
-            tmp.ptraveller = travellers[i]
-            
-            travellers[i].addToPexpensetraveller(tmp)
-            self.addToPexpensetraveller(tmp)
-        }
+        etToRefund.pamoutDebt = refund.amount
+        etToRefund.pamountCreator = 0.0
+        
+        refund.travellerToRefund.addToPexpensetraveller(etToRefund)
+        self.addToPexpensetraveller(etToRefund)
+        
+        let etInDept: ExpenseTraveller = ExpenseTraveller(context: CoreDataManager.context)
+        
+        etInDept.pamoutDebt = 0.0
+        etInDept.pamountCreator = refund.amount
+        
+        refund.travellerInDebt.addToPexpensetraveller(etInDept)
+        self.addToPexpensetraveller(etInDept)
+        
     }
 }

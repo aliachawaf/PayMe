@@ -1,22 +1,27 @@
 //
-//  TravellersConcernedCell.swift
+//  RefundInBalanceCell.swift
 //  PayMe
 //
-//  Created by Alia Chawaf on 02/04/2019.
+//  Created by Alia Chawaf on 03/04/2019.
 //  Copyright © 2019 Chawaf Alia & Gestin Rémi. All rights reserved.
 //
 
 import UIKit
 
-class TravellersConcernedCell: UITableViewCell {
+class RefundInBalanceCell: UITableViewCell {
+
+    var refund: Refund?
+    var refundTVController: RefundTVController?
+    
+    @IBAction func handleRefund(_ sender: Any) {
+        
+        Expense(refund: refund!)
+    }
     
     
-    @IBOutlet weak var amount: UILabel!
-    
-    @IBOutlet weak var nametraveller: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.amount.textAlignment = .right
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
