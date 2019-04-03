@@ -190,6 +190,14 @@
                                     <segue destination="1SK-J4-mdg" kind="show" identifier="showExpenses" id="vbm-cs-LlM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s52-B7-y2w">
+                                <rect key="frame" x="216" y="75" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Voir equilibre"/>
+                                <connections>
+                                    <segue destination="5Bj-VP-LQ9" kind="show" identifier="showBalance" id="PlE-0h-jyf"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-ae-Bsb">
                                 <rect key="frame" x="44" y="285" width="136" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -533,7 +541,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SqK-ud-X8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3732" y="835"/>
+            <point key="canvasLocation" x="4150" y="693"/>
+        </scene>
+        <!--EQUILIBRES-->
+        <scene sceneID="zlS-gI-Qhf">
+            <objects>
+                <viewController title="EQUILIBRES" id="5Bj-VP-LQ9" customClass="BalanceController" customModule="PayMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cLx-qo-6ib">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dqc-pt-Gtw">
+                                <rect key="frame" x="5" y="20" width="365" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTypeIdentifier" id="7UX-cq-UFe" customClass="TravellerBalanceCell" customModule="PayMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="365" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7UX-cq-UFe" id="fBV-Lm-d2I">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-mv-xKO">
+                                                    <rect key="frame" x="284" y="11" width="61" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="tbH-Oy-vkx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UmT-mv-xKO" firstAttribute="top" secondItem="fBV-Lm-d2I" secondAttribute="topMargin" id="5du-ov-axM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UmT-mv-xKO" secondAttribute="trailing" constant="5" id="Twb-Bl-7mK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="balance" destination="UmT-mv-xKO" id="1hl-xm-KMx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MBZ-cn-26c"/>
+                    </view>
+                    <connections>
+                        <outlet property="travellersTableView" destination="dqc-pt-Gtw" id="0Bs-HZ-6Kh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzj-ax-lnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3902" y="1417"/>
         </scene>
         <!--Edit Traveller Controller-->
         <scene sceneID="yp7-Uv-dm8">
@@ -948,7 +1009,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YP-R6-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3797.5999999999999" y="1576.4617691154424"/>
+            <point key="canvasLocation" x="2902" y="2337"/>
         </scene>
         <!--New Trip Controller-->
         <scene sceneID="Hgs-nF-o4U">

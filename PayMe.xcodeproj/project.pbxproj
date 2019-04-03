@@ -50,6 +50,9 @@
 		41DCC9342254E08F00EFC1A9 /* DetailsExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9332254E08F00EFC1A9 /* DetailsExpenseController.swift */; };
 		41DCC9362254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9352254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift */; };
 		41DCC9382254FA1D00EFC1A9 /* ConcernedTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9372254FA1D00EFC1A9 /* ConcernedTVController.swift */; };
+		41DCC93A2254FF2300EFC1A9 /* TravellerBalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9392254FF2300EFC1A9 /* TravellerBalanceCell.swift */; };
+		41DCC93D2254FFA900EFC1A9 /* BalanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC93C2254FFA900EFC1A9 /* BalanceController.swift */; };
+		41DCC93F2254FFC900EFC1A9 /* TravellersBalanceTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC93E2254FFC900EFC1A9 /* TravellersBalanceTVController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,9 @@
 		41DCC9332254E08F00EFC1A9 /* DetailsExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsExpenseController.swift; sourceTree = "<group>"; };
 		41DCC9352254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsOfExpenseTVController.swift; sourceTree = "<group>"; };
 		41DCC9372254FA1D00EFC1A9 /* ConcernedTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernedTVController.swift; sourceTree = "<group>"; };
+		41DCC9392254FF2300EFC1A9 /* TravellerBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellerBalanceCell.swift; sourceTree = "<group>"; };
+		41DCC93C2254FFA900EFC1A9 /* BalanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceController.swift; sourceTree = "<group>"; };
+		41DCC93E2254FFC900EFC1A9 /* TravellersBalanceTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellersBalanceTVController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +221,7 @@
 		4195316B22494CC6005CC7AA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				41DCC93B2254FF9300EFC1A9 /* Balance */,
 				41DCC92A2254DB1C00EFC1A9 /* DetailsExpense */,
 				41DCC91D22549E9800EFC1A9 /* ListExprense */,
 				41DCC91C22549E6400EFC1A9 /* ListTrip */,
@@ -329,6 +336,7 @@
 				41DCC9282254D49D00EFC1A9 /* ListTripCell.swift */,
 				41DCC92F2254E00D00EFC1A9 /* CreatorOfAnExpenseCell.swift */,
 				41DCC9312254E01D00EFC1A9 /* ConcernedByAnExpenseCell.swift */,
+				41DCC9392254FF2300EFC1A9 /* TravellerBalanceCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -359,6 +367,15 @@
 				41DCC9372254FA1D00EFC1A9 /* ConcernedTVController.swift */,
 			);
 			path = DetailsExpense;
+			sourceTree = "<group>";
+		};
+		41DCC93B2254FF9300EFC1A9 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				41DCC93C2254FFA900EFC1A9 /* BalanceController.swift */,
+				41DCC93E2254FFC900EFC1A9 /* TravellersBalanceTVController.swift */,
+			);
+			path = Balance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +521,7 @@
 				41DCC9152253FE4E00EFC1A9 /* TravellersConcernedCell.swift in Sources */,
 				41DCC9252254A67900EFC1A9 /* ExpenseFetchResultsController.swift in Sources */,
 				41AA38FD22526258003570B1 /* TravellerExpenseTableViewController.swift in Sources */,
+				41DCC93D2254FFA900EFC1A9 /* BalanceController.swift in Sources */,
 				419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */,
 				41DCC9302254E00D00EFC1A9 /* CreatorOfAnExpenseCell.swift in Sources */,
 				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,
@@ -528,7 +546,9 @@
 				41953178224953A6005CC7AA /* TripTableViewController.swift in Sources */,
 				4131EF1C22478DDD0077CD81 /* AppDelegate.swift in Sources */,
 				419FF7CF224E29DF00F83996 /* TripHistoryController.swift in Sources */,
+				41DCC93A2254FF2300EFC1A9 /* TravellerBalanceCell.swift in Sources */,
 				41DCC91B22548E3700EFC1A9 /* TravellerTripCell.swift in Sources */,
+				41DCC93F2254FFC900EFC1A9 /* TravellersBalanceTVController.swift in Sources */,
 				41A83C00224E15D600469D3E /* TravellerFetchResultsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

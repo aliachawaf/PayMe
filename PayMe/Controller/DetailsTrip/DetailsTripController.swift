@@ -96,8 +96,16 @@ class DetailsTripController: UIViewController {
                 
                     destController.trip = self.trip
                     
-                }
             }
+        }
+        
+        if segue.identifier == "showBalance"{
+            if let destController = segue.destination as? BalanceController {
+                
+                destController.trip = self.trip
+                
+            }
+        }
         
     }
     

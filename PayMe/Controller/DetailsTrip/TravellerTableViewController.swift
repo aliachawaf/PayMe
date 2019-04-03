@@ -97,12 +97,7 @@ class TravellerTableViewController: NSObject, UITableViewDataSource, TravellerVi
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-            self.travellerViewModel.delete(tripAt: indexPath)
-        }
-    }
-    
+ 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         let n = travellerViewModel.count
