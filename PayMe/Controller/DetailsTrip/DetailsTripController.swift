@@ -16,6 +16,15 @@ class DetailsTripController: UIViewController {
     @IBOutlet weak var finishedButton: UIBarButtonItem!
     @IBOutlet weak var totalAmountTrip: UILabel!
     
+    
+    @IBAction func handleShowExpenses(_ sender: Any) {
+        performSegue(withIdentifier: "showExpenses", sender: self)
+    }
+    
+    @IBAction func handleShowBalance(_ sender: Any) {
+        performSegue(withIdentifier: "showBalance", sender: self)
+    }
+    
     var trip: Trip?
     var travellersTV: TravellerTableViewController!
     var travellerToEdit: Traveller?

@@ -68,6 +68,9 @@ class TravellersBalanceTVController: NSObject, UITableViewDataSource, UITableVie
         return true
     }
 
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDelegate
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         let n = travellerViewModel.count
@@ -79,4 +82,8 @@ class TravellersBalanceTVController: NSObject, UITableViewDataSource, UITableVie
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        view.tintColor = #colorLiteral(red: 0.7509321217, green: 0.8862745166, blue: 0.8517355244, alpha: 1)
+    }
 }

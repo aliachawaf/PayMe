@@ -45,7 +45,8 @@ class CreatorsOfExpenseTVController: NSObject, UITableViewDataSource, UITableVie
     }
    
     
-    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -77,6 +78,9 @@ class CreatorsOfExpenseTVController: NSObject, UITableViewDataSource, UITableVie
 
         return cell
     }
+    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDelegate
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         

@@ -114,6 +114,8 @@ class RefundTVController: NSObject, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDelegate
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -122,6 +124,11 @@ class RefundTVController: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return "Remboursement"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        view.tintColor = #colorLiteral(red: 0.7509321217, green: 0.8862745166, blue: 0.8517355244, alpha: 1)
     }
 }
 

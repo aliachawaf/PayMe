@@ -44,7 +44,8 @@ class ConcernedTVController: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     
-    
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -77,6 +78,9 @@ class ConcernedTVController: NSObject, UITableViewDataSource, UITableViewDelegat
         return cell
     }
 
+    //-------------------------------------------------------------------------------------------------
+    // MARK: - TableViewDelegate
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return "Voyageur(s) endetté(s)"
