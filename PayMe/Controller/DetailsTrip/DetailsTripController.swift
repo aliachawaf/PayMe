@@ -14,7 +14,7 @@ class DetailsTripController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var travellersTableView: UITableView!
     @IBOutlet weak var finishedButton: UIBarButtonItem!
-    
+    @IBOutlet weak var totalAmountTrip: UILabel!
     
     var trip: Trip?
     var travellersTV: TravellerTableViewController!
@@ -43,6 +43,8 @@ class DetailsTripController: UIViewController {
         // set travellers data in the tableview
         self.travellersTV = TravellerTableViewController(tv: travellersTableView, trip: self.trip!)
         self.travellersTV.viewController = self
+        
+        self.totalAmountTrip.text = String(self.trip!.totalAmount!)
     }
     
     override func viewWillAppear(_ animated: Bool) {

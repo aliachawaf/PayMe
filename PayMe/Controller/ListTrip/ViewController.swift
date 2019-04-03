@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         self.TableViewController.viewTripList = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.TableViewController.dataSetChanged()
+    }
+    
     //-------------------------------------------------------------------------------------------------
     // MARK: - Navigation
     

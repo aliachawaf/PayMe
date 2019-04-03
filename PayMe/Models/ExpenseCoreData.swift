@@ -14,6 +14,49 @@ extension Expense {
     public var name: String {return self.pname ?? ""}
     public var date: Date? {return self.pdate}
     
+ 
+    
+    public var travellers: [Traveller] {
+        
+        var tabResult: [Traveller] = []
+        let tabET:  [ExpenseTraveller] = self.pexpensetraveller?.allObjects as! [ExpenseTraveller]
+        
+        for e in tabET {
+            
+                tabResult.append(e.ptraveller!)
+            
+        }
+        
+        return tabResult
+        
+    }
+    
+    public var amountCreator: [Double] {
+        var tabResult: [Double] = []
+        let tabET:  [ExpenseTraveller] = self.pexpensetraveller?.allObjects as! [ExpenseTraveller]
+        
+        for e in tabET {
+            
+            tabResult.append(e.pamountCreator)
+            
+        }
+        
+        return tabResult
+    }
+    
+    public var amountDebt: [Double] {
+        var tabResult: [Double] = []
+        let tabET:  [ExpenseTraveller] = self.pexpensetraveller?.allObjects as! [ExpenseTraveller]
+        
+        for e in tabET {
+            
+            tabResult.append(e.pamoutDebt)
+            
+        }
+        
+        return tabResult
+    }
+    
     public var trip: Trip? {
         
         let tab:  [ExpenseTraveller] = self.pexpensetraveller?.allObjects as! [ExpenseTraveller]        

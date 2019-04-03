@@ -22,4 +22,19 @@ class ListExpenseViewController: UIViewController {
         
     }
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailsExpense"{
+            if let destController = segue.destination as? DetailsExpenseController {
+                
+                if let cell = sender as? UITableViewCell {
+                    guard let index = self.expenseTV.indexPath(for: cell) else {return}
+                    destController.expense = self.expenseTVController.expenseViewModel.get(expenseAt: index.row)
+                    
+                }
+            }
+        }
+    }
+    
 }

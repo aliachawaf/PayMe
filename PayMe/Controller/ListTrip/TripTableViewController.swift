@@ -72,10 +72,12 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Fetch a cell of the appropriate type.
-        let cell = tripTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
+        let cell = tripTV.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath) as! ListTripCell
         
         // Configure the cell’s contents
-        cell.textLabel!.text = (self.tripViewModel.get(tripAt: indexPath.row)?.name)! + " " + String(self.tripViewModel.get(tripAt: indexPath.row)!.totalAmount!)
+        cell.textLabel!.text = (self.tripViewModel.get(tripAt: indexPath.row)?.name)!
+        
+        cell.amount.text = String(self.tripViewModel.get(tripAt: indexPath.row)!.totalAmount!) + " €"
         
         if let dataImage = self.tripViewModel.get(tripAt: indexPath.row)?.image {
             cell.imageView?.image = UIImage(data: dataImage)
@@ -109,4 +111,9 @@ class TripTableViewController: NSObject, UITableViewDataSource, TripViewModelDel
         
         return [delete, edit]
     }
+    /*
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 200 //or whatever you need
+    }*/
 }

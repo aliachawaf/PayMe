@@ -44,6 +44,12 @@
 		41DCC9212254A1E600EFC1A9 /* ExpenseTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9202254A1E600EFC1A9 /* ExpenseTVController.swift */; };
 		41DCC9232254A44900EFC1A9 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9222254A44900EFC1A9 /* ExpenseViewModel.swift */; };
 		41DCC9252254A67900EFC1A9 /* ExpenseFetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9242254A67900EFC1A9 /* ExpenseFetchResultsController.swift */; };
+		41DCC9292254D49D00EFC1A9 /* ListTripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9282254D49D00EFC1A9 /* ListTripCell.swift */; };
+		41DCC9302254E00D00EFC1A9 /* CreatorOfAnExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC92F2254E00D00EFC1A9 /* CreatorOfAnExpenseCell.swift */; };
+		41DCC9322254E01D00EFC1A9 /* ConcernedByAnExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9312254E01D00EFC1A9 /* ConcernedByAnExpenseCell.swift */; };
+		41DCC9342254E08F00EFC1A9 /* DetailsExpenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9332254E08F00EFC1A9 /* DetailsExpenseController.swift */; };
+		41DCC9362254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9352254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift */; };
+		41DCC9382254FA1D00EFC1A9 /* ConcernedTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DCC9372254FA1D00EFC1A9 /* ConcernedTVController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +113,12 @@
 		41DCC9202254A1E600EFC1A9 /* ExpenseTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTVController.swift; sourceTree = "<group>"; };
 		41DCC9222254A44900EFC1A9 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
 		41DCC9242254A67900EFC1A9 /* ExpenseFetchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFetchResultsController.swift; sourceTree = "<group>"; };
+		41DCC9282254D49D00EFC1A9 /* ListTripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTripCell.swift; sourceTree = "<group>"; };
+		41DCC92F2254E00D00EFC1A9 /* CreatorOfAnExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorOfAnExpenseCell.swift; sourceTree = "<group>"; };
+		41DCC9312254E01D00EFC1A9 /* ConcernedByAnExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernedByAnExpenseCell.swift; sourceTree = "<group>"; };
+		41DCC9332254E08F00EFC1A9 /* DetailsExpenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsExpenseController.swift; sourceTree = "<group>"; };
+		41DCC9352254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsOfExpenseTVController.swift; sourceTree = "<group>"; };
+		41DCC9372254FA1D00EFC1A9 /* ConcernedTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcernedTVController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +215,7 @@
 		4195316B22494CC6005CC7AA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				41DCC92A2254DB1C00EFC1A9 /* DetailsExpense */,
 				41DCC91D22549E9800EFC1A9 /* ListExprense */,
 				41DCC91C22549E6400EFC1A9 /* ListTrip */,
 				41AA390A22527B5C003570B1 /* EditTraveller */,
@@ -313,6 +326,9 @@
 				41DCC9142253FE4E00EFC1A9 /* TravellersConcernedCell.swift */,
 				41DCC91822548CC000EFC1A9 /* TravellersCreatorCell.swift */,
 				41DCC91A22548E3700EFC1A9 /* TravellerTripCell.swift */,
+				41DCC9282254D49D00EFC1A9 /* ListTripCell.swift */,
+				41DCC92F2254E00D00EFC1A9 /* CreatorOfAnExpenseCell.swift */,
+				41DCC9312254E01D00EFC1A9 /* ConcernedByAnExpenseCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -333,6 +349,16 @@
 				41DCC9202254A1E600EFC1A9 /* ExpenseTVController.swift */,
 			);
 			path = ListExprense;
+			sourceTree = "<group>";
+		};
+		41DCC92A2254DB1C00EFC1A9 /* DetailsExpense */ = {
+			isa = PBXGroup;
+			children = (
+				41DCC9332254E08F00EFC1A9 /* DetailsExpenseController.swift */,
+				41DCC9352254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift */,
+				41DCC9372254FA1D00EFC1A9 /* ConcernedTVController.swift */,
+			);
+			path = DetailsExpense;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,8 +492,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DCC9362254E20200EFC1A9 /* CreatorsOfExpenseTVController.swift in Sources */,
 				419FF7D1224E5A9300F83996 /* TravellerViewModel.swift in Sources */,
+				41DCC9292254D49D00EFC1A9 /* ListTripCell.swift in Sources */,
 				4131EF2422478DDD0077CD81 /* PayMe.xcdatamodeld in Sources */,
+				41DCC9342254E08F00EFC1A9 /* DetailsExpenseController.swift in Sources */,
+				41DCC9382254FA1D00EFC1A9 /* ConcernedTVController.swift in Sources */,
 				41C2ACD8225133F100487E9F /* EditTripController.swift in Sources */,
 				41AA39012252787A003570B1 /* ExpenseCoreData.swift in Sources */,
 				4195317022494E78005CC7AA /* TripFetchResultsController.swift in Sources */,
@@ -475,6 +505,7 @@
 				41DCC9252254A67900EFC1A9 /* ExpenseFetchResultsController.swift in Sources */,
 				41AA38FD22526258003570B1 /* TravellerExpenseTableViewController.swift in Sources */,
 				419FF7CB224E1E2900F83996 /* TripHistoryFetchResultsController.swift in Sources */,
+				41DCC9302254E00D00EFC1A9 /* CreatorOfAnExpenseCell.swift in Sources */,
 				4131EF1E22478DDD0077CD81 /* ViewController.swift in Sources */,
 				419FF7CD224E26B900F83996 /* TravellerCoreData.swift in Sources */,
 				41DCC9232254A44900EFC1A9 /* ExpenseViewModel.swift in Sources */,
@@ -484,6 +515,7 @@
 				4159025222538D58001B8CCA /* TravellersCreatorTVController.swift in Sources */,
 				4195317422495182005CC7AA /* TripCoreData.swift in Sources */,
 				4195317B22495478005CC7AA /* TripViewModel.swift in Sources */,
+				41DCC9322254E01D00EFC1A9 /* ConcernedByAnExpenseCell.swift in Sources */,
 				419FF7D5224E648B00F83996 /* NewTravellerController.swift in Sources */,
 				41DCC91922548CC000EFC1A9 /* TravellersCreatorCell.swift in Sources */,
 				41DCC91F2254A1D100EFC1A9 /* ListExpenseViewController.swift in Sources */,

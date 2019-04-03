@@ -28,6 +28,7 @@ class ExpenseTVController: NSObject, UITableViewDataSource, ExpenseViewModelDele
         self.expenseTV.dataSource = self
         self.expenseTV.delegate = self
         self.expenseViewModel.delegate = self
+        
     }
 
     
